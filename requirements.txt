@@ -1,0 +1,9 @@
+google-genai
+openai
+pandas
+sentence-transformers
+scikit-learn
+datasets
+fastapi
+uvicorn
+python-dotenv

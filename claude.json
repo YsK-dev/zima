@@ -1,0 +1,732 @@
+[
+    {
+        "instruction": "I have a headache",
+        "input": "",
+        "output": "First, drink a full glass of water as dehydration is a common cause. Then find a quiet, dark room to rest for 15-20 minutes. You can also apply a cold compress to your forehead."
+    },
+    {
+        "instruction": "My head hurts",
+        "input": "",
+        "output": "Start by drinking water and taking a break from screens. Sit or lie down in a comfortable position, close your eyes, and take deep breaths. A gentle neck massage might help too."
+    },
+    {
+        "instruction": "I'm experiencing a headache",
+        "input": "",
+        "output": "Hydrate immediately - drink 2 glasses of water. Move to a dimly lit, quiet space. Try gently massaging your temples in circular motions. If it persists beyond a few hours, consider over-the-counter pain relief."
+    },
+    {
+        "instruction": "My throat hurts",
+        "input": "",
+        "output": "Gargle with warm salt water (1/2 teaspoon salt in 8oz warm water) every few hours. Drink warm liquids like tea with honey, and use throat lozenges. Rest your voice as much as possible."
+    },
+    {
+        "instruction": "I have a sore throat",
+        "input": "",
+        "output": "Start with warm salt water gargling. Stay well-hydrated with water and warm beverages. Honey can coat and soothe your throat. Use a humidifier if the air is dry, and avoid irritants like smoke."
+    },
+    {
+        "instruction": "Throat is painful when swallowing",
+        "input": "",
+        "output": "Mix salt with warm water and gargle 3-4 times daily. Sip on warm tea with lemon and honey. Keep your throat moist by drinking plenty of fluids. Rest and avoid talking loudly."
+    },
+    {
+        "instruction": "I cut myself",
+        "input": "",
+        "output": "Rinse the cut under clean running water for a few minutes. Apply gentle pressure with a clean cloth to stop bleeding. Once stopped, apply an antibiotic ointment and cover with a bandage."
+    },
+    {
+        "instruction": "Small cut on my finger",
+        "input": "",
+        "output": "First, wash your hands thoroughly. Clean the cut with cool water, apply pressure if bleeding. Pat dry gently, apply antibiotic cream, and cover with a sterile bandage. Change the bandage daily."
+    },
+    {
+        "instruction": "I have a minor cut",
+        "input": "",
+        "output": "Run clean water over the cut for 2-3 minutes. Apply firm but gentle pressure with clean gauze until bleeding stops. Clean around the wound, apply antibiotic ointment, and bandage it."
+    },
+    {
+        "instruction": "I have a muscle cramp",
+        "input": "",
+        "output": "Gently stretch the affected muscle - if it's your calf, straighten your leg and pull your toes toward you. Apply gentle pressure and massage the area. Walk around slowly once the intensity decreases."
+    },
+    {
+        "instruction": "Leg cramp",
+        "input": "",
+        "output": "Stop what you're doing immediately. Stretch the cramped muscle gently and hold for 30 seconds. Massage it with your hands. Apply heat with a warm towel or cold with an ice pack, whichever feels better."
+    },
+    {
+        "instruction": "My calf is cramping",
+        "input": "",
+        "output": "Straighten the affected limb and flex the muscle in the opposite direction. Gently massage the area in circular motions. Stay hydrated - drink water. Light walking can help once the initial pain subsides."
+    },
+    {
+        "instruction": "I have hiccups",
+        "input": "",
+        "output": "Try drinking a glass of cold water slowly without breathing. Hold your breath for 10-15 seconds, then exhale slowly. You can also try breathing into a paper bag for a minute."
+    },
+    {
+        "instruction": "Can't stop hiccuping",
+        "input": "",
+        "output": "Drink water from the far side of a glass while bending forward. Alternatively, hold your breath for as long as comfortable, then breathe out slowly. Gargling with water can also help."
+    },
+    {
+        "instruction": "Got the hiccups",
+        "input": "",
+        "output": "Swallow a teaspoon of sugar or honey - it can interrupt the hiccup reflex. Pull your knees to your chest and hold for a few minutes. Breathe slowly and deeply into a paper bag."
+    },
+    {
+        "instruction": "My nose is bleeding",
+        "input": "",
+        "output": "Sit up straight and lean slightly forward (not back). Pinch the soft part of your nose firmly for 10-15 minutes without releasing. Breathe through your mouth. Apply a cold compress to your nose bridge."
+    },
+    {
+        "instruction": "I have a nosebleed",
+        "input": "",
+        "output": "Don't lie down - sit upright and tilt your head slightly forward. Pinch your nostrils together firmly for at least 10 minutes. Place an ice pack on the bridge of your nose. Avoid blowing your nose for several hours."
+    },
+    {
+        "instruction": "Nose started bleeding",
+        "input": "",
+        "output": "Lean forward slightly while sitting. Firmly pinch the soft part of your nose shut for 10-15 minutes continuously. Apply ice wrapped in cloth to your nose and cheeks. Once stopped, avoid bending down or straining."
+    },
+    {
+        "instruction": "I have indigestion",
+        "input": "",
+        "output": "Avoid lying down for at least 2-3 hours after eating. Drink some peppermint or ginger tea. Take a slow walk to aid digestion. Avoid tight clothing around your waist."
+    },
+    {
+        "instruction": "Stomach feels upset",
+        "input": "",
+        "output": "Sip on warm water or herbal tea slowly. Try walking slowly for 10-15 minutes to help digestion. Avoid carbonated drinks and fatty foods. Sit upright and loosen any tight clothing."
+    },
+    {
+        "instruction": "My eyes feel tired",
+        "input": "",
+        "output": "Follow the 20-20-20 rule: every 20 minutes, look at something 20 feet away for 20 seconds. Close your eyes and rest them for 2-3 minutes. Adjust your screen brightness to match ambient lighting."
+    },
+    {
+        "instruction": "Eye strain from computer",
+        "input": "",
+        "output": "Take a break from screens immediately. Close your eyes and cover them with your palms for a minute. Blink deliberately 10-20 times to moisten your eyes. Ensure your screen is at arm's length and slightly below eye level."
+    },
+    {
+        "instruction": "My nose is congested",
+        "input": "",
+        "output": "Use a saline nasal spray or rinse to clear passages. Breathe in steam from a hot shower or bowl of hot water. Stay hydrated by drinking plenty of fluids. Use a humidifier in your room."
+    },
+    {
+        "instruction": "Can't breathe through nose",
+        "input": "",
+        "output": "Inhale steam - lean over a bowl of hot water with a towel over your head for 5-10 minutes. Drink warm liquids like tea or soup. Apply a warm compress over your nose and forehead. Sleep with your head elevated."
+    },
+    {
+        "instruction": "I burned myself",
+        "input": "",
+        "output": "Immediately run cool (not ice cold) water over the burn for 10-15 minutes. Don't use ice directly. Pat dry gently and apply aloe vera gel or antibiotic ointment. Cover loosely with a clean, dry bandage if needed."
+    },
+    {
+        "instruction": "Small burn on my hand",
+        "input": "",
+        "output": "Cool the burn under running water for at least 10 minutes - this is crucial. Remove any jewelry near the burn before swelling occurs. Apply aloe vera or burn gel once cooled. Cover with a non-stick bandage."
+    },
+    {
+        "instruction": "Can't sleep",
+        "input": "",
+        "output": "Get out of bed and do a quiet, relaxing activity like reading in dim light until you feel sleepy. Avoid screens. Try deep breathing: breathe in for 4 counts, hold for 7, exhale for 8. Keep your room cool and dark."
+    },
+    {
+        "instruction": "Having trouble falling asleep",
+        "input": "",
+        "output": "Don't force sleep - get up and do something calming for 20 minutes. Practice progressive muscle relaxation: tense and release each muscle group from toes to head. Ensure your room is dark, cool, and quiet."
+    },
+    {
+        "instruction": "My skin is very dry",
+        "input": "",
+        "output": "Apply a thick moisturizer immediately after bathing while skin is still damp. Use lukewarm water instead of hot for showers. Drink plenty of water throughout the day. Use a humidifier in dry environments."
+    },
+    {
+        "instruction": "Skin feels rough and dry",
+        "input": "",
+        "output": "Moisturize within 3 minutes of showering to lock in moisture. Switch to gentle, fragrance-free cleansers. Take shorter, cooler showers. Apply moisturizer multiple times daily, especially to problem areas."
+    },
+    {
+        "instruction": "I have a splinter",
+        "input": "",
+        "output": "Wash the area with soap and water. Sterilize tweezers with rubbing alcohol. Gently pull the splinter out at the same angle it entered. Clean the area again and apply antibiotic ointment."
+    },
+    {
+        "instruction": "Got a splinter in my finger",
+        "input": "",
+        "output": "Clean your hands and the affected area thoroughly. Use sterilized tweezers to grasp the splinter as close to the skin as possible. Pull it out slowly and steadily. Wash again and bandage if needed."
+    },
+    {
+        "instruction": "My back hurts",
+        "input": "",
+        "output": "Apply an ice pack for the first 48 hours, then switch to heat. Avoid staying in one position too long - alternate between sitting, standing, and lying down. Gentle stretches and walking can help. Sleep on your side with a pillow between your knees."
+    },
+    {
+        "instruction": "Lower back pain",
+        "input": "",
+        "output": "Rest on a firm surface with a pillow under your knees. Apply ice for 15-20 minutes several times a day initially. After 2 days, use heat instead. Stay mobile with gentle movements - don't stay in bed all day."
+    },
+    {
+        "instruction": "Stiff neck",
+        "input": "",
+        "output": "Apply a heating pad or warm towel to the stiff area for 15-20 minutes. Gently stretch your neck by slowly tilting your head side to side and forward. Avoid sudden movements. Sleep without a thick pillow tonight."
+    },
+    {
+        "instruction": "My neck is stiff and sore",
+        "input": "",
+        "output": "Use alternating ice and heat - ice for 10 minutes, then heat for 10 minutes. Perform gentle neck rolls and stretches slowly. Avoid carrying heavy bags on one shoulder. Check your sleeping position and pillow height."
+    },
+    {
+        "instruction": "I have a cough",
+        "input": "",
+        "output": "Drink warm liquids like tea with honey or warm water with lemon. Stay hydrated throughout the day. Use a humidifier to add moisture to the air. Prop yourself up with extra pillows when sleeping to ease coughing at night."
+    },
+    {
+        "instruction": "Can't stop coughing",
+        "input": "",
+        "output": "Sip warm water slowly and frequently. Try a spoonful of honey to coat your throat. Breathe in steam from a hot shower or bowl of hot water. Avoid irritants like smoke, strong perfumes, and cold air."
+    },
+    {
+        "instruction": "I feel nauseous",
+        "input": "",
+        "output": "Sit upright or lie down with your head elevated. Sip clear fluids slowly - try ginger tea or flat ginger ale. Eat small amounts of bland foods like crackers or toast. Breathe deeply and slowly. Avoid strong smells."
+    },
+    {
+        "instruction": "Feeling sick to my stomach",
+        "input": "",
+        "output": "Avoid lying flat - keep your head elevated. Take small sips of water or clear liquids every few minutes. Fresh air can help - sit near an open window. Try sucking on ice chips or peppermint candy."
+    },
+    {
+        "instruction": "I have a toothache",
+        "input": "",
+        "output": "Rinse your mouth with warm salt water. Apply a cold compress to the outside of your cheek for 15-20 minutes. Avoid very hot, cold, or sweet foods. Take over-the-counter pain medication as directed. See a dentist soon."
+    },
+    {
+        "instruction": "Tooth is hurting",
+        "input": "",
+        "output": "Gently floss around the painful tooth to remove any trapped food. Rinse with warm salt water several times. Use a cold compress on your cheek. Avoid chewing on that side. Schedule a dental appointment."
+    },
+    {
+        "instruction": "I have a bruise",
+        "input": "",
+        "output": "Apply ice wrapped in a cloth for 15-20 minutes as soon as possible to reduce swelling. Keep the area elevated above heart level if possible. After 24 hours, switch to warm compresses to promote healing."
+    },
+    {
+        "instruction": "Got a bruise on my leg",
+        "input": "",
+        "output": "Ice the area immediately for 15 minutes, repeat several times in the first day. Elevate your leg when resting. After the first day, apply warm compresses. Gentle massage around (not on) the bruise can help after 48 hours."
+    },
+    {
+        "instruction": "My lips are chapped",
+        "input": "",
+        "output": "Apply lip balm with SPF frequently throughout the day. Drink plenty of water to stay hydrated. Use a humidifier at night. Avoid licking your lips as saliva makes them drier. Gently exfoliate with a soft toothbrush if skin is flaking."
+    },
+    {
+        "instruction": "Dry cracked lips",
+        "input": "",
+        "output": "Use a thick, fragrance-free lip balm or petroleum jelly. Apply before bed and whenever they feel dry. Stay hydrated by drinking water regularly. Avoid breathing through your mouth. Don't pick at peeling skin."
+    },
+    {
+        "instruction": "I have bad breath",
+        "input": "",
+        "output": "Brush your teeth and tongue thoroughly for at least 2 minutes. Floss to remove food particles between teeth. Rinse with water or mouthwash. Drink plenty of water throughout the day. Chew sugar-free gum to stimulate saliva."
+    },
+    {
+        "instruction": "Mouth tastes bad",
+        "input": "",
+        "output": "Brush your teeth, tongue, and gums well. Scrape your tongue gently with a tongue scraper or toothbrush. Rinse with water or salt water. Stay hydrated. Eat crunchy fruits like apples which naturally clean teeth."
+    },
+    {
+        "instruction": "I have motion sickness",
+        "input": "",
+        "output": "Look at the horizon or a fixed point in the distance, not at moving objects. Sit in the front seat of a car or middle of a boat. Get fresh air by opening a window. Avoid reading or looking at screens. Try ginger candy or tea."
+    },
+    {
+        "instruction": "Feeling car sick",
+        "input": "",
+        "output": "Focus on a stable point outside the vehicle. Take slow, deep breaths. Keep your head still against the headrest. Open a window for fresh air. Avoid heavy meals before traveling. Sip on cold water slowly."
+    },
+    {
+        "instruction": "I have a canker sore",
+        "input": "",
+        "output": "Rinse your mouth with warm salt water several times daily. Avoid spicy, acidic, or rough foods that irritate it. Apply a small amount of milk of magnesia directly on the sore. Use a straw for drinks to avoid contact."
+    },
+    {
+        "instruction": "Mouth sore that hurts",
+        "input": "",
+        "output": "Mix equal parts hydrogen peroxide and water, apply with a cotton swab. Rinse with salt water 3-4 times daily. Eat soft, bland foods. Avoid touching it with your tongue. Apply ice to numb the area temporarily."
+    },
+    {
+        "instruction": "I have a hangnail",
+        "input": "",
+        "output": "Soak your finger in warm water for 5-10 minutes to soften the skin. Use clean nail clippers or scissors to carefully trim the loose skin - don't pull it. Apply antibiotic ointment and cover with a bandage if irritated."
+    },
+    {
+        "instruction": "Painful hangnail on my finger",
+        "input": "",
+        "output": "Don't pull or tear it. Soften it with warm water, then carefully clip it with sterilized nail clippers. Clean the area and apply antibiotic ointment. Keep it moisturized to prevent new ones from forming."
+    },
+    {
+        "instruction": "My ear feels clogged",
+        "input": "",
+        "output": "Try yawning or chewing gum to help pop your ears. Pinch your nose, close your mouth, and gently blow to equalize pressure. Apply a warm compress to the ear. Don't insert anything into your ear canal."
+    },
+    {
+        "instruction": "Ear feels blocked",
+        "input": "",
+        "output": "Tilt your head and pull your earlobe gently while opening and closing your jaw. Try the Valsalva maneuver: close your mouth, pinch your nose, and gently exhale. Use a warm compress against your ear. Stay hydrated."
+    },
+    {
+        "instruction": "I feel dizzy",
+        "input": "",
+        "output": "Sit or lie down immediately in a safe place. Close your eyes and take slow, deep breaths. Drink water slowly as dehydration can cause dizziness. Avoid sudden movements. If standing, hold onto something stable."
+    },
+    {
+        "instruction": "Room is spinning",
+        "input": "",
+        "output": "Lie down flat immediately and keep your head still. Focus on a fixed point when you open your eyes. Breathe slowly and deeply. Avoid bright lights. Stay lying down until the spinning stops, then get up slowly."
+    },
+    {
+        "instruction": "I have heartburn",
+        "input": "",
+        "output": "Stay upright - don't lie down for at least 3 hours after eating. Drink a glass of water to help wash acid down. Chew gum to increase saliva production. Loosen tight clothing around your waist. Avoid trigger foods."
+    },
+    {
+        "instruction": "Chest burning sensation",
+        "input": "",
+        "output": "Sit up straight or stand. Sip on water or milk slowly. Chew sugar-free gum to neutralize acid. Avoid lying down. Try baking soda mixed in water (1/2 teaspoon in 4oz water) as an antacid. Elevate your head when sleeping."
+    },
+    {
+        "instruction": "I have dandruff",
+        "input": "",
+        "output": "Use an anti-dandruff shampoo and leave it on your scalp for 5 minutes before rinsing. Wash your hair regularly but not excessively. Avoid scratching your scalp. Reduce styling products. Get more sunlight but use sunscreen."
+    },
+    {
+        "instruction": "Itchy flaky scalp",
+        "input": "",
+        "output": "Switch to a medicated dandruff shampoo with zinc or selenium. Massage it into your scalp gently and let it sit for a few minutes. Rinse thoroughly. Use a moisturizing conditioner on your hair ends, not scalp. Brush hair regularly."
+    },
+    {
+        "instruction": "Mild sunburn",
+        "input": "",
+        "output": "Take a cool bath or shower immediately. Apply aloe vera gel generously to the affected areas. Take an anti-inflammatory like ibuprofen. Drink extra water. Wear loose clothing. Stay out of the sun until healed."
+    },
+    {
+        "instruction": "Skin is red and hot from sun",
+        "input": "",
+        "output": "Cool the skin with cold compresses or a cool bath. Apply pure aloe vera gel or moisturizer frequently. Take an anti-inflammatory medication. Drink plenty of water. Don't pop any blisters that form. Stay indoors."
+    },
+    {
+        "instruction": "I feel constipated",
+        "input": "",
+        "output": "Drink a large glass of warm water first thing in the morning. Eat high-fiber foods like fruits, vegetables, and whole grains. Exercise or walk for 20-30 minutes. Try a natural laxative like prune juice. Don't ignore the urge to go."
+    },
+    {
+        "instruction": "Haven't had a bowel movement in days",
+        "input": "",
+        "output": "Increase your water intake significantly - aim for 8-10 glasses today. Eat fiber-rich foods like oatmeal, berries, and beans. Go for a walk to stimulate your digestive system. Drink warm liquids like coffee or tea. Try gentle abdominal massage."
+    },
+    {
+        "instruction": "I have diarrhea",
+        "input": "",
+        "output": "Stay well hydrated - drink water, clear broth, or oral rehydration solutions frequently. Eat bland foods like bananas, rice, applesauce, and toast (BRAT diet). Avoid dairy, fatty, and spicy foods. Rest as much as possible."
+    },
+    {
+        "instruction": "Stomach upset with loose bowels",
+        "input": "",
+        "output": "Drink clear fluids often to prevent dehydration. Stick to bland, easy-to-digest foods. Avoid caffeine, alcohol, and high-fiber foods temporarily. Get plenty of rest. Wash hands frequently to prevent spread."
+    },
+    {
+        "instruction": "My hands are cold",
+        "input": "",
+        "output": "Rub your hands together vigorously to generate heat. Place them under warm (not hot) running water. Do arm circles and finger exercises to improve circulation. Wear gloves or mittens. Drink a warm beverage."
+    },
+    {
+        "instruction": "Fingers feel numb from cold",
+        "input": "",
+        "output": "Warm your hands gradually with lukewarm water - never hot water directly. Move your fingers and arms to increase blood flow. Tuck your hands under your armpits. Drink warm fluids. Layer clothing to stay warm overall."
+    },
+    {
+        "instruction": "I have a paper cut",
+        "input": "",
+        "output": "Run it under cold water to clean. Apply pressure with a clean tissue if bleeding. Once bleeding stops, apply a small amount of antibiotic ointment. Cover with a bandage to protect from further irritation and infection."
+    },
+    {
+        "instruction": "Small paper cut that stings",
+        "input": "",
+        "output": "Clean it gently with water. Dab on antibiotic ointment - this will reduce stinging and prevent infection. Cover with a small bandage or liquid bandage. The pain should subside in a few hours."
+    },
+    {
+        "instruction": "I bit my tongue",
+        "input": "",
+        "output": "Rinse your mouth with cold water. Apply gentle pressure with a clean cloth or gauze if bleeding. Suck on ice chips to reduce swelling and pain. Rinse with salt water after bleeding stops. Stick to soft foods."
+    },
+    {
+        "instruction": "Accidentally bit my tongue and it hurts",
+        "input": "",
+        "output": "Apply direct pressure with sterile gauze if bleeding. Use ice or cold water to numb the area. Rinse with salt water once bleeding stops. Avoid hot, spicy, or acidic foods. Take over-the-counter pain relief if needed."
+    },
+    {
+        "instruction": "I have a pimple",
+        "input": "",
+        "output": "Don't squeeze or pick at it - this can cause scarring. Wash the area gently with a mild cleanser twice daily. Apply a spot treatment with benzoyl peroxide or salicylic acid. Use oil-free moisturizer. Be patient - it will heal."
+    },
+    {
+        "instruction": "Acne breakout on my face",
+        "input": "",
+        "output": "Cleanse your face morning and night with a gentle cleanser. Avoid touching your face with your hands. Use non-comedogenic products. Apply acne treatment with benzoyl peroxide or tea tree oil. Change your pillowcase regularly."
+    },
+    {
+        "instruction": "I have a stye in my eye",
+        "input": "",
+        "output": "Apply a warm compress to your closed eye for 10-15 minutes, 3-4 times daily. Don't squeeze or pop it. Avoid wearing eye makeup and contact lenses. Keep the area clean. It should resolve in a few days."
+    },
+    {
+        "instruction": "Painful bump on my eyelid",
+        "input": "",
+        "output": "Use warm compresses frequently - this is the most effective treatment. Gently massage the area while applying warmth. Don't try to pop it. Avoid makeup around the area. Wash your hands before touching your face."
+    },
+    {
+        "instruction": "My ankle is swollen",
+        "input": "",
+        "output": "Follow RICE: Rest the ankle, Ice for 15-20 minutes every 2-3 hours, Compress with an elastic bandage (not too tight), Elevate above heart level. Avoid putting weight on it. Take anti-inflammatory medication if needed."
+    },
+    {
+        "instruction": "Twisted my ankle",
+        "input": "",
+        "output": "Stop activity immediately. Apply ice wrapped in cloth right away. Elevate your ankle above your heart. Wrap with an elastic bandage for support. Rest and avoid walking on it. Use crutches if putting weight on it hurts."
+    },
+    {
+        "instruction": "I have a charley horse",
+        "input": "",
+        "output": "Stretch the cramped muscle immediately - straighten your leg and flex your foot upward. Massage the muscle firmly with your hands. Walk around once you can. Apply heat to relax the muscle. Drink water and consider electrolyte replacement."
+    },
+    {
+        "instruction": "Sudden severe muscle cramp",
+        "input": "",
+        "output": "Stop moving and stretch the muscle gently but firmly. Massage it with both hands using circular motions. Apply warmth or ice, whichever feels better. Once it relaxes, walk slowly to prevent recurrence. Stay hydrated."
+    },
+    {
+        "instruction": "I have a runny nose",
+        "input": "",
+        "output": "Drink plenty of warm fluids like tea or soup. Use a saline nasal spray to flush out irritants. Apply a warm compress over your nose and forehead. Use tissues frequently and dispose of them properly. Wash your hands often."
+    },
+    {
+        "instruction": "Nose won't stop running",
+        "input": "",
+        "output": "Stay hydrated with warm liquids. Use a humidifier to add moisture to the air. Try steam inhalation from a hot shower. Rest as much as possible. Avoid irritants like smoke and strong odors. Keep tissues handy."
+    },
+    {
+        "instruction": "I feel bloated",
+        "input": "",
+        "output": "Take a gentle walk for 10-15 minutes to help move gas through your system. Avoid carbonated drinks and gum. Drink peppermint tea or warm water with lemon. Lie on your left side to help gas pass. Avoid eating large meals."
+    },
+    {
+        "instruction": "Stomach feels really full and gassy",
+        "input": "",
+        "output": "Move around - walking helps relieve gas. Try gentle yoga poses like child's pose. Drink warm water or herbal tea slowly. Avoid foods that produce gas. Massage your abdomen gently in a clockwise direction."
+    },
+    {
+        "instruction": "I have a cold sore",
+        "input": "",
+        "output": "Apply ice to the area at the first sign of tingling. Use over-the-counter cold sore cream containing docosanol. Keep it clean and dry. Avoid touching it and wash hands frequently. Don't share utensils or towels. It typically heals in 7-10 days."
+    },
+    {
+        "instruction": "Blister on my lip",
+        "input": "",
+        "output": "Apply a cold compress to reduce swelling. Use a lip balm with SPF to protect it. Keep the area clean. Avoid picking at it or touching it. Use disposable applicators for any ointments. Don't kiss or share items."
+    },
+    {
+        "instruction": "My knee hurts",
+        "input": "",
+        "output": "Rest your knee and avoid activities that cause pain. Apply ice for 15-20 minutes several times daily. Keep it elevated when sitting. Use a compression bandage for support. Avoid kneeling or squatting. Gentle stretching may help."
+    },
+    {
+        "instruction": "Knee pain when walking",
+        "input": "",
+        "output": "Ice the knee for 15 minutes after activity. Rest and elevate it. Use over-the-counter anti-inflammatory medication. Try gentle range-of-motion exercises. Wear supportive shoes. Avoid stairs and hills temporarily."
+    },
+    {
+        "instruction": "I have an ingrown toenail",
+        "input": "",
+        "output": "Soak your foot in warm water with Epsom salt for 15-20 minutes, 3 times daily. Gently lift the nail edge and place a small piece of cotton underneath. Wear open-toed or loose shoes. Keep the area clean and dry."
+    },
+    {
+        "instruction": "Toe hurts from ingrown nail",
+        "input": "",
+        "output": "Soak in warm salt water several times a day to reduce swelling. After soaking, gently push the skin away from the nail. Apply antibiotic ointment. Wear comfortable, roomy shoes. Don't cut the nail too short in the future."
+    },
+    {
+        "instruction": "I have allergies acting up",
+        "input": "",
+        "output": "Stay indoors when pollen counts are high. Keep windows closed and use air conditioning. Shower and wash your hair before bed to remove allergens. Use saline nasal rinses. Change clothes after being outside. Consider antihistamines."
+    },
+    {
+        "instruction": "Sneezing and itchy eyes",
+        "input": "",
+        "output": "Wash your face and hands to remove allergens. Use artificial tears to flush irritants from your eyes. Don't rub your eyes. Stay indoors during peak pollen times. Use a cool compress on your eyes for relief."
+    },
+    {
+        "instruction": "I have a rash",
+        "input": "",
+        "output": "Keep the area clean and dry. Apply a cool compress to reduce itching. Use fragrance-free moisturizer or hydrocortisone cream. Avoid scratching. Wear loose, breathable clothing. Identify and avoid potential irritants."
+    },
+    {
+        "instruction": "Itchy red skin irritation",
+        "input": "",
+        "output": "Wash the area gently with mild soap and water. Pat dry and apply unscented moisturizer or calamine lotion. Take a cool bath with colloidal oatmeal. Avoid hot water. Don't scratch - try patting instead."
+    },
+    {
+        "instruction": "I have brain fog",
+        "input": "",
+        "output": "Take a 5-10 minute break to clear your mind. Do some light physical activity or stretching. Drink a full glass of water - dehydration affects focus. Step outside for fresh air. Try deep breathing exercises. Prioritize sleep tonight."
+    },
+    {
+        "instruction": "Can't focus or think clearly",
+        "input": "",
+        "output": "Step away from your task and take a short walk. Hydrate well - drink water. Eat a small healthy snack with protein. Practice the 4-7-8 breathing technique. Reduce distractions. Make a simple to-do list to organize thoughts."
+    },
+    {
+        "instruction": "I feel stressed",
+        "input": "",
+        "output": "Take five slow, deep breaths - inhale for 4 counts, hold for 4, exhale for 6. Step outside for fresh air if possible. List three things you're grateful for. Do a quick body scan and release tension. Take a short break from the stressor."
+    },
+    {
+        "instruction": "Feeling overwhelmed and anxious",
+        "input": "",
+        "output": "Ground yourself with the 5-4-3-2-1 technique: name 5 things you see, 4 you can touch, 3 you hear, 2 you smell, 1 you taste. Breathe deeply. Write down what's bothering you. Break tasks into smaller steps."
+    },
+    {
+        "instruction": "I have a wart",
+        "input": "",
+        "output": "Keep the area clean and dry. Apply over-the-counter wart remover with salicylic acid daily as directed. Cover with a bandage. File down the wart gently after soaking in warm water. Be patient - it may take several weeks."
+    },
+    {
+        "instruction": "Small wart on my hand",
+        "input": "",
+        "output": "Use an over-the-counter wart treatment consistently. Soak the area in warm water for 5 minutes before applying treatment to soften skin. Cover it with tape or a bandage. Don't pick at it. Avoid sharing towels."
+    },
+    {
+        "instruction": "I have static shock",
+        "input": "",
+        "output": "Moisturize your skin regularly to reduce static buildup. Use a humidifier to add moisture to dry air. Touch grounded metal objects before sensitive electronics. Wear natural fabrics like cotton. Use fabric softener in laundry."
+    },
+    {
+        "instruction": "Keep getting shocked by everything",
+        "input": "",
+        "output": "Increase humidity in your environment with a humidifier. Apply hand lotion frequently. Touch a key or coin to metal objects before your skin. Avoid synthetic materials. Walk barefoot at home when possible to discharge static."
+    },
+    {
+        "instruction": "I have shoulder pain",
+        "input": "",
+        "output": "Apply ice for the first 48 hours, then switch to heat. Rest your shoulder but maintain gentle range of motion. Avoid overhead activities. Try gentle pendulum exercises - bend forward and let your arm hang, then swing gently. Sleep on your other side."
+    },
+    {
+        "instruction": "Shoulder hurts when I move it",
+        "input": "",
+        "output": "Ice the shoulder for 15-20 minutes several times daily. Take anti-inflammatory medication. Do gentle stretches - slowly roll your shoulders backward and forward. Avoid carrying heavy bags on that side. Use proper posture."
+    },
+    {
+        "instruction": "I feel dehydrated",
+        "input": "",
+        "output": "Drink water immediately - sip slowly rather than gulping. Eat water-rich foods like watermelon, cucumber, or oranges. Avoid caffeine and alcohol. Add electrolytes with sports drinks or coconut water. Rest in a cool environment."
+    },
+    {
+        "instruction": "Really thirsty and dry mouth",
+        "input": "",
+        "output": "Drink water steadily over the next hour - don't chug it all at once. Suck on ice chips. Eat fruits with high water content. Avoid sugary drinks. Rest and limit physical activity until you're rehydrated."
+    },
+    {
+        "instruction": "I have jaw pain",
+        "input": "",
+        "output": "Apply a warm compress to your jaw for 10-15 minutes. Massage the jaw muscles gently. Avoid hard, chewy foods. Practice relaxation techniques as jaw clenching often relates to stress. Take anti-inflammatory medication if needed."
+    },
+    {
+        "instruction": "Jaw feels tight and sore",
+        "input": "",
+        "output": "Use moist heat on the jaw area. Do gentle jaw stretches - open slowly and hold. Avoid chewing gum and tough foods. Be aware of teeth clenching - consciously relax your jaw throughout the day. Sleep on your back."
+    },
+    {
+        "instruction": "I feel lightheaded",
+        "input": "",
+        "output": "Sit or lie down immediately. Lower your head between your knees if sitting. Breathe slowly and deeply. Drink water or juice slowly. Loosen any tight clothing. Don't stand up too quickly. Eat something small if you haven't eaten recently."
+    },
+    {
+        "instruction": "Head feels light when I stand",
+        "input": "",
+        "output": "Sit back down immediately. Stay seated for a minute, then stand up slowly. Drink water - low blood pressure from dehydration causes this. Flex your leg muscles before standing. Eat regular meals. Rise slowly from lying or sitting."
+    },
+    {
+        "instruction": "I have smelly feet",
+        "input": "",
+        "output": "Wash your feet daily with antibacterial soap and dry thoroughly, especially between toes. Change socks at least once a day. Use foot powder or antiperspirant on feet. Rotate shoes - don't wear the same pair two days in a row. Go barefoot at home."
+    },
+    {
+        "instruction": "Feet smell bad",
+        "input": "",
+        "output": "Soak feet in warm water with Epsom salt or vinegar for 15 minutes. Dry completely, including between toes. Apply foot powder. Wear moisture-wicking socks and breathable shoes. Put baking soda in your shoes overnight to absorb odor."
+    },
+    {
+        "instruction": "I have a stiff shoulder",
+        "input": "",
+        "output": "Apply heat with a heating pad or warm shower for 15 minutes. Do gentle arm circles and shoulder shrugs. Stretch by clasping hands behind your back. Avoid sudden movements. Sleep with proper pillow support."
+    },
+    {
+        "instruction": "Shoulder won't move properly",
+        "input": "",
+        "output": "Use heat therapy to relax muscles. Try wall walks with your fingers to increase range. Do pendulum exercises - let your arm hang and swing gently. Avoid heavy lifting. Maintain good posture throughout the day."
+    },
+    {
+        "instruction": "My voice is hoarse",
+        "input": "",
+        "output": "Rest your voice - speak minimally and don't whisper (it strains vocal cords more). Stay hydrated by drinking water frequently. Use a humidifier. Avoid clearing your throat harshly. Drink warm tea with honey. Avoid caffeine and alcohol."
+    },
+    {
+        "instruction": "Lost my voice",
+        "input": "",
+        "output": "Complete voice rest is best - communicate by writing if possible. Breathe in steam from hot water. Drink warm liquids throughout the day. Use a humidifier while sleeping. Avoid smoking and secondhand smoke. Don't strain to talk."
+    },
+    {
+        "instruction": "I have a stomach ache",
+        "input": "",
+        "output": "Lie down and rest. Apply a heating pad or hot water bottle to your stomach. Sip on clear fluids like water or ginger tea. Avoid solid food until you feel better. Try gentle abdominal massage in clockwise circles."
+    },
+    {
+        "instruction": "Stomach cramping",
+        "input": "",
+        "output": "Rest in a comfortable position with knees bent. Use heat on your abdomen. Drink peppermint or chamomile tea. Avoid eating until cramps subside. Take small sips of water. Walk slowly if cramps are from gas."
+    },
+    {
+        "instruction": "My feet hurt from standing",
+        "input": "",
+        "output": "Sit down and elevate your feet above heart level. Roll a tennis ball under each foot for massage. Soak feet in cold water for 10 minutes. Gently stretch your calves and feet. Massage your feet focusing on the arches."
+    },
+    {
+        "instruction": "Feet are sore and tired",
+        "input": "",
+        "output": "Take off your shoes and elevate your feet. Alternate soaking in warm and cold water. Massage each foot, paying attention to the arch and heel. Stretch your toes and ankles. Rest for at least 15 minutes before walking again."
+    },
+    {
+        "instruction": "I have a blister",
+        "input": "",
+        "output": "Don't pop it if possible - the fluid protects it. Clean the area gently. Apply a blister bandage or padded dressing to cushion it. If it pops on its own, clean with soap and water, apply antibiotic ointment, and bandage it."
+    },
+    {
+        "instruction": "Painful blister on my foot",
+        "input": "",
+        "output": "Leave it intact if you can. Cover with a special blister pad that cushions while it heals. If it's torn, clean thoroughly, apply antibiotic ointment, and cover with sterile gauze. Change shoes to avoid further friction."
+    },
+    {
+        "instruction": "I feel car sick",
+        "input": "",
+        "output": "Look at the horizon or a fixed distant point. Sit in the front seat if possible. Open a window for fresh air. Take slow, deep breaths. Avoid reading or phone use. Try ginger candy. Close your eyes and rest your head."
+    },
+    {
+        "instruction": "Nauseous from car ride",
+        "input": "",
+        "output": "Ask to stop the car and get fresh air. Focus on breathing slowly. Keep your head still against the headrest. Look straight ahead at the road. Sip cold water slowly. Avoid strong smells and heavy foods."
+    },
+    {
+        "instruction": "I have frizzy hair",
+        "input": "",
+        "output": "Apply a leave-in conditioner or anti-frizz serum to damp hair. Don't rub your hair with a towel - squeeze or pat dry instead. Use a microfiber towel or t-shirt. Avoid touching your hair throughout the day. Sleep on a silk pillowcase."
+    },
+    {
+        "instruction": "Hair is really frizzy today",
+        "input": "",
+        "output": "Apply a small amount of hair oil or serum to smooth flyaways. Avoid brushing - use fingers or a wide-tooth comb. Don't touch your hair excessively. Use a tiny bit of hand lotion on flyaways if needed. Tie it back if very unmanageable."
+    },
+    {
+        "instruction": "I stubbed my toe",
+        "input": "",
+        "output": "Ice it immediately for 15-20 minutes. Elevate your foot. Gently move the toe to check if it's broken - if you can move it and walk, it's likely just bruised. Take anti-inflammatory medication. Buddy tape it to the next toe for support."
+    },
+    {
+        "instruction": "Hit my toe really hard",
+        "input": "",
+        "output": "Apply ice right away. Elevate your foot above heart level. Take pain medication if needed. Avoid walking on it for a bit. Gently test if you can move it. If severe pain, swelling, or can't bear weight, it may be broken."
+    },
+    {
+        "instruction": "My fingers feel stiff",
+        "input": "",
+        "output": "Soak hands in warm water for 5-10 minutes. Do gentle finger exercises - make a fist, spread fingers wide, touch each finger to thumb. Massage each finger individually. Apply warm compress or heating pad. Use hand moisturizer."
+    },
+    {
+        "instruction": "Hands are stiff and achy",
+        "input": "",
+        "output": "Warm your hands with a heating pad or warm water. Perform gentle stretches - bend and straighten each finger, rotate wrists. Massage your hands, focusing on knuckles. Avoid repetitive hand motions. Consider using compression gloves."
+    },
+    {
+        "instruction": "I have acne on my back",
+        "input": "",
+        "output": "Shower immediately after sweating. Use a body wash with salicylic acid or benzoyl peroxide. Exfoliate gently 2-3 times a week. Wear loose, breathable fabrics. Change your sheets weekly. Avoid heavy body lotions on your back."
+    },
+    {
+        "instruction": "Back breakout",
+        "input": "",
+        "output": "Cleanse your back thoroughly in the shower using a long-handled brush. Apply acne treatment containing benzoyl peroxide. Let your back air dry before dressing. Wear cotton clothing. Wash workout clothes after each use. Don't pick at blemishes."
+    },
+    {
+        "instruction": "I have tennis elbow",
+        "input": "",
+        "output": "Rest your arm - avoid the activity that caused it. Ice the outer elbow for 15 minutes several times daily. Take anti-inflammatory medication. Do gentle wrist and forearm stretches. Use an elbow brace or strap for support during activities."
+    },
+    {
+        "instruction": "Elbow pain on outside",
+        "input": "",
+        "output": "Apply ice to reduce inflammation. Rest your arm and modify activities that cause pain. Perform gentle stretches - extend arm, bend wrist down with other hand. Use an elbow strap. Take over-the-counter pain relief."
+    },
+    {
+        "instruction": "My cuticles are dry",
+        "input": "",
+        "output": "Apply cuticle oil or vitamin E oil daily, especially before bed. Push cuticles back gently after showering when soft. Don't cut them. Wear gloves when doing dishes or cleaning. Stay hydrated. Massage oil into nail beds regularly."
+    },
+    {
+        "instruction": "Dry skin around nails",
+        "input": "",
+        "output": "Moisturize hands frequently, paying extra attention to cuticles. Use cuticle cream or oil at bedtime. Soak nails in warm water, then gently push back cuticles with a soft tool. Don't pick at them. Protect hands from harsh chemicals."
+    },
+    {
+        "instruction": "I feel tired after eating",
+        "input": "",
+        "output": "Take a short 10-15 minute walk to aid digestion and boost energy. Stay hydrated - drink water. Avoid large, heavy meals - eat smaller portions. Choose proteins and complex carbs over refined sugars. Don't lie down immediately after eating."
+    },
+    {
+        "instruction": "Sleepy after lunch",
+        "input": "",
+        "output": "Move around - take a brief walk or do light stretches. Drink cold water. Step outside for fresh air and sunlight. Avoid sugary foods that cause crashes. Eat balanced meals with protein. Consider eating smaller, more frequent meals."
+    },
+    {
+        "instruction": "I have cracked heels",
+        "input": "",
+        "output": "Soak feet in warm soapy water for 15-20 minutes. Gently file away dead skin with a pumice stone. Dry thoroughly and apply thick moisturizer or petroleum jelly. Wear cotton socks to bed. Repeat daily until healed."
+    },
+    {
+        "instruction": "Heels are dry and cracked",
+        "input": "",
+        "output": "Exfoliate heels after soaking in warm water using a foot file. Apply a heavy-duty foot cream with urea or lactic acid. Cover with socks overnight. Stay hydrated. Use a heel balm specifically designed for cracked skin."
+    },
+    {
+        "instruction": "My wrist hurts",
+        "input": "",
+        "output": "Rest your wrist and avoid repetitive motions. Ice it for 15-20 minutes several times a day. Keep it elevated when possible. Use a wrist brace for support. Take breaks from computer work. Stretch your wrist and fingers gently."
+    },
+    {
+        "instruction": "Wrist pain from typing",
+        "input": "",
+        "output": "Take frequent breaks - follow the 20-20-20 rule. Ice your wrist after work. Wear a wrist support brace. Adjust your keyboard height so wrists are neutral. Do wrist stretches every hour. Use an ergonomic keyboard and mouse."
+    },
+    {
+        "instruction": "I have a fever",
+        "input": "",
+        "output": "Rest in bed and drink plenty of fluids - water, herbal tea, or broth. Take fever-reducing medication like acetaminophen or ibuprofen as directed. Use a damp, cool cloth on your forehead. Dress in light layers. Monitor your temperature regularly."
+    },
+    {
+        "instruction": "Feeling feverish",
+        "input": "",
+        "output": "Check your temperature with a thermometer. Stay hydrated with water and clear fluids. Rest as much as possible. Take fever reducer if needed. Use cool compresses on forehead and neck. Wear lightweight clothing. Avoid heavy blankets unless you have chills."
+    }
+]
