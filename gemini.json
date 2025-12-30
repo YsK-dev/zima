@@ -1,0 +1,252 @@
+[
+    {
+        "instruction": "I have a terrible headache and need relief.",
+        "input": "",
+        "output": "1. Drink a large glass of water immediately; dehydration is the most common cause.\n2. Apply a cold pack to your forehead or the back of your neck.\n3. Rest in a dark, quiet room to reduce sensory stimulation.\n4. Take an over-the-counter pain reliever like ibuprofen or acetaminophen if needed."
+    },
+    {
+        "instruction": "My head hurts right behind my eyes.",
+        "input": "",
+        "output": "This sounds like eye strain or a tension headache.\n1. Step away from all screens (phone, computer, TV).\n2. Apply a warm cloth to your eyes/face to relax the muscles.\n3. Gently massage your temples and the bridge of your nose.\n4. Ensure you are hydrated."
+    },
+    {
+        "instruction": "I have a migraine and the light hurts my eyes.",
+        "input": "",
+        "output": "1. Immediately move to a completely dark room.\n2. Apply a cold compress or ice pack wrapped in a towel to your neck.\n3. Drink a small amount of caffeine (like coffee or cola), which can sometimes help constrict blood vessels during a migraine.\n4. Try to sleep it off."
+    },
+    {
+        "instruction": "I just cut my finger on a piece of paper.",
+        "input": "",
+        "output": "1. Wash the area with mild soap and water.\n2. Pat it dry with a clean cloth.\n3. Apply a small amount of antibiotic ointment if available.\n4. Cover with a bandage to keep the cut edges together and protect exposed nerve endings."
+    },
+    {
+        "instruction": "I burned my hand on a hot pan.",
+        "input": "",
+        "output": "1. Run cool (not cold) tap water over the burn for 10-20 minutes immediately.\n2. Do not apply ice, butter, or oil.\n3. Once cooled, apply a loose, sterile bandage.\n4. Take ibuprofen for pain relief if necessary."
+    },
+    {
+        "instruction": "I twisted my ankle and it is swelling.",
+        "input": "",
+        "output": "Use the RICE method:\n- **Rest:** Avoid putting weight on the ankle.\n- **Ice:** Apply an ice pack for 15-20 minutes every 2-3 hours.\n- **Compression:** Wrap with an elastic bandage (not too tight).\n- **Elevation:** Prop the foot up on pillows above heart level."
+    },
+    {
+        "instruction": "I have a nosebleed that won't stop.",
+        "input": "",
+        "output": "1. Lean slightly forward (do NOT tilt your head back).\n2. Pinch the soft part of your nose just below the bony bridge.\n3. Hold the pinch firmly for 10 full minutes without checking.\n4. Breathe through your mouth."
+    },
+    {
+        "instruction": "I have really bad hiccups.",
+        "input": "",
+        "output": "1. Hold your breath for as long as comfortable.\n2. Swallow a teaspoon of dry sugar to stimulate the vagus nerve.\n3. Drink a glass of water from the opposite side of the glass (bending over)."
+    },
+    {
+        "instruction": "I feel nauseous and want to vomit.",
+        "input": "",
+        "output": "1. Sit upright; do not lie flat.\n2. Sip on ginger tea or chew on a piece of ginger.\n3. Get fresh air or sit in front of a fan.\n4. Sniffing rubbing alcohol on a cotton pad can sometimes stop nausea immediately."
+    },
+    {
+        "instruction": "I have heartburn / acid reflux.",
+        "input": "",
+        "output": "1. Mix 1/2 teaspoon of baking soda in a glass of water and drink it (alkalizes the stomach acid).\n2. Stand up or sit upright; do not lie down.\n3. Loosen your belt or tight clothing.\n4. Chew gum to increase saliva production."
+    },
+    {
+        "instruction": "I have a stomach ache and cramps.",
+        "input": "",
+        "output": "1. Apply a hot water bottle or heating pad to your abdomen.\n2. Sip on warm peppermint or chamomile tea.\n3. Lie on your side with your knees drawn up slightly.\n4. Avoid solid food until the pain subsides."
+    },
+    {
+        "instruction": "I am constipated and my stomach feels heavy.",
+        "input": "",
+        "output": "1. Drink a warm beverage, like coffee or warm lemon water, to stimulate the bowel.\n2. Eat high-fiber snacks like prunes or an apple.\n3. Go for a 15-minute brisk walk to get your digestion moving.\n4. Squat or use a stool under your feet while on the toilet."
+    },
+    {
+        "instruction": "I have diarrhea and feel weak.",
+        "input": "",
+        "output": "1. Hydrate immediately with electrolyte drinks or water with a pinch of salt and sugar.\n2. Stick to the BRAT diet: Bananas, Rice, Applesauce, Toast.\n3. Avoid dairy, caffeine, and spicy foods.\n4. Rest to let your body recover."
+    },
+    {
+        "instruction": "I have a sore throat.",
+        "input": "",
+        "output": "1. Gargle with warm salt water (1/2 tsp salt in 1 cup warm water).\n2. Drink tea with honey and lemon.\n3. Stay hydrated to keep the throat moist.\n4. Use a humidifier in your room if the air is dry."
+    },
+    {
+        "instruction": "I have a stuffy nose and can't breathe.",
+        "input": "",
+        "output": "1. Take a hot shower and breathe in the steam.\n2. Use a saline nasal spray to flush out mucus.\n3. Sleep with your head elevated on an extra pillow.\n4. Apply a warm compress across your nose."
+    },
+    {
+        "instruction": "I have a dry cough that won't stop.",
+        "input": "",
+        "output": "1. Take a spoonful of honey (natural cough suppressant).\n2. Drink plenty of warm fluids.\n3. Suck on a throat lozenge or hard candy.\n4. Avoid irritants like smoke or cold dry air."
+    },
+    {
+        "instruction": "I have a fever and feel hot.",
+        "input": "",
+        "output": "1. Drink plenty of fluids to prevent dehydration.\n2. Wear light clothing and use light bedding.\n3. Place a cool, damp cloth on your forehead.\n4. Take acetaminophen or ibuprofen to lower the temperature."
+    },
+    {
+        "instruction": "I can't fall asleep (Insomnia).",
+        "input": "",
+        "output": "1. Use the 4-7-8 breathing method: Inhale for 4s, hold for 7s, exhale for 8s.\n2. Put away your phone/blue light screens.\n3. Ensure the room is cool (around 18-20°C).\n4. Try progressive muscle relaxation (tensing and relaxing muscles from toes to head)."
+    },
+    {
+        "instruction": "I woke up with a stiff neck.",
+        "input": "",
+        "output": "1. Apply heat (shower or heat pack) to loosen the muscle.\n2. Gently stretch your neck by tilting your ear toward your shoulder.\n3. Massage the area gently with your fingers.\n4. Avoid checking your phone with your head bent down."
+    },
+    {
+        "instruction": "I have a leg cramp / charley horse.",
+        "input": "",
+        "output": "1. Stand up and put weight on the affected leg immediately.\n2. Stretch the muscle by pulling your toes upward.\n3. Massage the cramped muscle firmly.\n4. Apply heat to relax the muscle after the initial cramp passes."
+    },
+    {
+        "instruction": "My lower back hurts from sitting too long.",
+        "input": "",
+        "output": "1. Stand up and walk around.\n2. Do the 'Cat-Cow' stretch on your hands and knees.\n3. Lie on your back with your knees bent and feet flat on the floor to neutralize the spine.\n4. Apply heat to the lower back."
+    },
+    {
+        "instruction": "I have a toothache.",
+        "input": "",
+        "output": "1. Rinse your mouth with warm salt water to clean it out.\n2. Floss gently to ensure no food is stuck causing pressure.\n3. Apply a cold compress to the outside of your cheek.\n4. Apply a small amount of clove oil to the gum if available."
+    },
+    {
+        "instruction": "I burnt my tongue on hot coffee.",
+        "input": "",
+        "output": "1. Sip on ice-cold water or suck on an ice chip (don't hold it in one spot too long).\n2. Eat something cold and soft like yogurt or ice cream.\n3. Avoid spicy or acidic foods for 24 hours.\n4. Breathe through your mouth to cool it down."
+    },
+    {
+        "instruction": "I have a bee sting.",
+        "input": "",
+        "output": "1. Remove the stinger immediately by scraping it with a credit card (do not pinch it).\n2. Wash with soap and water.\n3. Apply a paste of baking soda and water to neutralize the venom.\n4. Apply ice to reduce swelling."
+    },
+    {
+        "instruction": "I have an itchy mosquito bite.",
+        "input": "",
+        "output": "1. Wash the area with soap and water.\n2. Apply a cold pack to numb the itch.\n3. Apply hydrocortisone cream or calamine lotion.\n4. Do not scratch, as this causes infection."
+    },
+    {
+        "instruction": "I have a splinter in my finger.",
+        "input": "",
+        "output": "1. Wash your hands and the area.\n2. Sterilize a needle and tweezers with rubbing alcohol.\n3. Gently loosen the skin around the splinter with the needle.\n4. Pull the splinter out with tweezers at the same angle it entered."
+    },
+    {
+        "instruction": "My eyes are dry and itchy.",
+        "input": "",
+        "output": "1. Blink repeatedly to produce tears.\n2. Use artificial tears (lubricating eye drops).\n3. Apply a warm, damp washcloth over closed eyes for 5 minutes.\n4. Avoid rubbing your eyes."
+    },
+    {
+        "instruction": "I have something stuck in my eye.",
+        "input": "",
+        "output": "1. Blink rapidly to see if tears wash it out.\n2. Pull your upper eyelid over your lower eyelid.\n3. Rinse your eye with clean water or saline solution.\n4. Do not rub your eye, as this can scratch the cornea."
+    },
+    {
+        "instruction": "I feel dizzy / lightheaded.",
+        "input": "",
+        "output": "1. Sit or lie down immediately to prevent falling.\n2. Drink water (dizziness is often dehydration).\n3. Eat something sweet (fruit or juice) in case of low blood sugar.\n4. Breathe slowly and deeply."
+    },
+    {
+        "instruction": "I have a panic attack / anxiety spike.",
+        "input": "",
+        "output": "1. Use the 5-4-3-2-1 grounding technique: Acknowledge 5 things you see, 4 you can touch, 3 you hear, 2 you can smell, 1 you can taste.\n2. Focus on slow, deep belly breathing.\n3. Splash cold water on your face (mammalian dive reflex).\n4. Repeat a calming phrase to yourself."
+    },
+    {
+        "instruction": "I have a blister on my heel.",
+        "input": "",
+        "output": "1. Do not pop it if possible (the skin protects against infection).\n2. Apply a blister pad or donut-shaped bandage to protect it from friction.\n3. If it pops, wash with soap, apply antibiotic ointment, and cover.\n4. Wear open-back shoes if possible."
+    },
+    {
+        "instruction": "I have a hangover.",
+        "input": "",
+        "output": "1. Drink water or an electrolyte drink immediately.\n2. Eat a carbohydrate-rich breakfast (toast, crackers) to stabilize blood sugar.\n3. Take ibuprofen (avoid acetaminophen as it strains the liver alongside alcohol).\n4. Go back to sleep if possible."
+    },
+    {
+        "instruction": "My skin is sunburnt.",
+        "input": "",
+        "output": "1. Get out of the sun immediately.\n2. Take a cool shower or bath.\n3. Apply generous amounts of aloe vera gel or moisturizer.\n4. Drink extra water to help skin repair."
+    },
+    {
+        "instruction": "I have acne / a big pimple.",
+        "input": "",
+        "output": "1. Do not pop it (this spreads bacteria).\n2. Apply a warm compress to bring the bacteria to the surface.\n3. Apply a spot treatment containing benzoyl peroxide or salicylic acid.\n4. Keep the area clean and moisturized."
+    },
+    {
+        "instruction": "I have bad breath and no toothbrush.",
+        "input": "",
+        "output": "1. Rinse your mouth vigorously with water.\n2. Chew on fresh parsley, mint, or a clove.\n3. Eat an apple or carrot (the texture scrubs teeth).\n4. Scrape your tongue using a spoon."
+    },
+    {
+        "instruction": "I have ringing in my ears (Tinnitus).",
+        "input": "",
+        "output": "1. Avoid silence; use white noise or a fan to mask the ringing.\n2. Reduce caffeine and alcohol intake.\n3. Check your blood pressure.\n4. Try tapping the back of your head gently while covering your ears."
+    },
+    {
+        "instruction": "My hands are shaking.",
+        "input": "",
+        "output": "1. Check if you have eaten recently (could be low blood sugar).\n2. Drink water.\n3. Reduce caffeine intake.\n4. Take slow deep breaths to rule out adrenaline/anxiety."
+    },
+    {
+        "instruction": "I have menstrual cramps.",
+        "input": "",
+        "output": "1. Apply a heating pad to the lower abdomen.\n2. Drink warm herbal tea (raspberry leaf or chamomile).\n3. Take an NSAID like ibuprofen.\n4. gentle yoga or walking can relieve pelvic congestion."
+    },
+    {
+        "instruction": "I have a cold sore.",
+        "input": "",
+        "output": "1. Apply an antiviral cream (like Docosanol) immediately.\n2. Apply ice to reduce redness and swelling.\n3. Do not touch or pick at it.\n4. Avoid acidic foods (citrus, tomatoes) that sting."
+    },
+    {
+        "instruction": "I have dandruff / itchy scalp.",
+        "input": "",
+        "output": "1. Wash hair with a zinc pyrithione or ketoconazole shampoo.\n2. Don't scratch; massage the scalp gently.\n3. Rinse with apple cider vinegar diluted in water.\n4. moisturizing the scalp with coconut oil before washing."
+    },
+    {
+        "instruction": "I have smelly feet.",
+        "input": "",
+        "output": "1. Wash feet thoroughly with antibacterial soap and dry completely.\n2. Soak feet in black tea (tannins kill bacteria) or vinegar water.\n3. Wear cotton socks and breathable shoes.\n4. Use foot powder to absorb moisture."
+    },
+    {
+        "instruction": "I have a bruise.",
+        "input": "",
+        "output": "1. Apply ice immediately to reduce blood flow to the area.\n2. Elevate the bruised area if possible.\n3. After 48 hours, apply heat to help clear the trapped blood.\n4. Rest the area."
+    },
+    {
+        "instruction": "I have a blocked ear (from a flight or cold).",
+        "input": "",
+        "output": "1. Try the Valsalva maneuver: Pinch nose, close mouth, and blow gently.\n2. Chew gum or fake yawn widely.\n3. Use a warm compress against the ear.\n4. Inhale steam."
+    },
+    {
+        "instruction": "I have chapped lips.",
+        "input": "",
+        "output": "1. Apply a thick lip balm or petroleum jelly.\n2. Do not lick your lips (saliva dries them out more).\n3. Drink water to hydrate from within.\n4. Use a humidifier at night."
+    },
+    {
+        "instruction": "I have a rash from poison ivy/plants.",
+        "input": "",
+        "output": "1. Wash the skin with dish soap and cool water immediately to remove oils.\n2. Wash your clothes/shoes to prevent reinfection.\n3. Apply calamine lotion or hydrocortisone cream.\n4. Take an antihistamine for the itching."
+    },
+    {
+        "instruction": "I have a stye on my eye.",
+        "input": "",
+        "output": "1. Apply a warm, damp compress for 10 minutes, 4 times a day.\n2. Do not squeeze or pop it.\n3. Avoid wearing makeup or contact lenses.\n4. Keep the eyelid clean with mild baby soap."
+    },
+    {
+        "instruction": "I accidentally ate something spicy.",
+        "input": "",
+        "output": "1. Drink milk or eat yogurt (dairy dissolves capsaicin).\n2. Eat a spoonful of sugar or honey.\n3. Do NOT drink water (it spreads the oil).\n4. Eat bread or rice to absorb the oil."
+    },
+    {
+        "instruction": "I have motion sickness (car/sea).",
+        "input": "",
+        "output": "1. Look at the horizon (a fixed point).\n2. Open a window for fresh air.\n3. Avoid reading or looking at your phone.\n4. Chew on ginger or peppermint."
+    },
+    {
+        "instruction": "I have a static shock constantly.",
+        "input": "",
+        "output": "1. Touch metal objects with a key first to discharge current.\n2. Use a humidifier (dry air causes static).\n3. Wear cotton clothes instead of synthetic.\n4. Moisturize your skin."
+    },
+    {
+        "instruction": "I have a mild electric shock.",
+        "input": "",
+        "output": "1. Move away from the source.\n2. Check for burns at contact points.\n3. If you feel fine, rest and drink water.\n4. *Note: If you experienced muscle paralysis or heart palpitations, this requires professional care.*"
+    }
+]
