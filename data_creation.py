@@ -8,47 +8,63 @@ from google.genai import types
 
 # --- Configuration Constants ---
 GEMINI_MODEL = 'gemini-3-flash-preview'  # SOTA Teacher Model (Released Dec 17, 2025)
-QWEN_MODEL = 'qwen3:30b'          # Local Teacher Model (Ryzen 9 5900X)
+QWEN_MODEL = 'qwen3:4b'           # Local Teacher Model (Ryzen 9 5900X)
 OUTPUT_FILE = 'synthetic_geriatric_data.jsonl'
 
-# Resolve seed file across common notebook locations (Colab/local/Drive/Windows path provided)
+# Resolve seed files across common notebook locations (Colab/local/Drive/Windows path provided)
 BASE_DIR = Path(__file__).parent if "__file__" in globals() else Path.cwd()
 INTENTS_ENV = os.getenv("INTENTS_JSON_PATH")
-CANDIDATE_SEED_PATHS = [
-    Path("intents.json"),
-    Path("archive/intents.json"),
-    Path("aws;_colab/archive/intents.json"),
-    BASE_DIR / "intents.json",
-    BASE_DIR / "archive/intents.json",
-    BASE_DIR / "aws;_colab/archive/intents.json",
-    Path.cwd() / "intents.json",
-    Path.cwd() / "archive/intents.json",
-    Path.cwd() / "aws;_colab/archive/intents.json",
-    Path("/content/drive/MyDrive/intents.json"),
-    Path("/content/drive/MyDrive/archive/intents.json"),
-    Path("/content/drive/MyDrive/aws;_colab/archive/intents.json"),
-    Path("/content/drive/MyDrive/Colab Notebooks/intents.json"),
-    Path("/content/drive/MyDrive/Colab Notebooks/archive/intents.json"),
-    Path("/content/drive/MyDrive/Colab Notebooks/aws;_colab/archive/intents.json"),
-    Path(r"C:\Users\Adnan Menderes Üni\Yusuf-sertkaya\intents.json"),
-    Path(r"C:\Users\Adnan Menderes Üni\Yusuf-sertkaya\archive\intents.json"),
+
+# Base directories to search for seed files
+SEARCH_DIRS = [
+    Path("."),
+    Path("aws;_colab/archive"),
+    BASE_DIR,
+    Path.cwd()
 ]
 
-def resolve_seed_path():
+def resolve_all_seed_files():
+    """Find and return paths to all available seed data files."""
+    seed_files = {
+        'intents': None,
+        'claude': None,
+        'gemini': None
+    }
+    
+    # Check environment variable for intents.json first
     if INTENTS_ENV:
         p = Path(INTENTS_ENV)
         if p.exists():
-            return p
-    checked = []
-    for p in CANDIDATE_SEED_PATHS:
-        checked.append(str(p))
-        if p.exists():
-            return p
-    raise FileNotFoundError(
-        "intents.json not found. Place it next to the notebook, under archive/, aws;_colab/archive/, set INTENTS_JSON_PATH env var, or ensure your Drive/Windows path is mounted. Checked: " + ", ".join(checked)
-    )
+            seed_files['intents'] = p
+    
+    # Search for each seed file in all directories
+    for name in seed_files.keys():
+        if seed_files[name] is not None:
+            continue  # Already found via env var
+        
+        filename = f"{name}.json"
+        for search_dir in SEARCH_DIRS:
+            candidate = search_dir / filename
+            if candidate.exists():
+                seed_files[name] = candidate
+                break
+    
+    # At least one seed file must exist
+    found_files = {k: v for k, v in seed_files.items() if v is not None}
+    if not found_files:
+        checked = [str(d / "*.json") for d in SEARCH_DIRS[:5]]  # Show first 5 for brevity
+        raise FileNotFoundError(
+            f"No seed data files found. Looking for: intents.json, claude.json, gemini.json.\n"
+            f"Searched in: {', '.join(checked)}..."
+        )
+    
+    print(f"Found {len(found_files)} seed file(s):")
+    for name, path in found_files.items():
+        print(f"  - {name}.json: {path}")
+    
+    return found_files
 
-KAGGLE_SEED_PATH = resolve_seed_path()
+SEED_FILES = resolve_all_seed_files()
 SEED_SAMPLE_SIZE = 500  # Only use a small, diverse subset of the mental health data
 TARGET_GENERATION_SIZE = 50000 # The number of high-quality examples we aim to generate
 
@@ -103,13 +119,23 @@ def load_seed_dataframe(path: Path) -> pd.DataFrame:
     """Load seed data flexibly from csv/json/jsonl and validate required columns."""
     suffix = path.suffix.lower()
     
-    # 1. Try parsing as standard 'intents.json' structure first if .json
+    # 1. Try parsing as JSON first
     if suffix == '.json':
         try:
             with open(path, 'r', encoding='utf-8') as f:
                 data = json.load(f)
             
-            # Handle {"intents": [...]} format
+            # Handle array of {instruction, input, output} objects (Alpaca/Claude/Gemini format)
+            if isinstance(data, list) and len(data) > 0:
+                if all(isinstance(item, dict) and 'instruction' in item for item in data):
+                    # Direct Alpaca format - map to text/label
+                    df = pd.DataFrame(data)
+                    # Combine instruction as text, output as label
+                    # Keep input for context but use instruction as the primary text
+                    print(f"Detected Alpaca format. Loaded {len(df)} instruction-output pairs.")
+                    return df.rename(columns={'instruction': 'text', 'output': 'label'})
+            
+            # Handle {"intents": [...]} format (mental health chatbot)
             if isinstance(data, dict) and "intents" in data and isinstance(data["intents"], list):
                 rows = []
                 for item in data["intents"]:
@@ -130,7 +156,7 @@ def load_seed_dataframe(path: Path) -> pd.DataFrame:
                     return pd.DataFrame(rows)
                     
         except Exception as e:
-            print(f"JSON parsing as intents failed: {e}. Falling back to pandas.")
+            print(f"JSON parsing failed: {e}. Falling back to pandas.")
 
     # 2. Fallback to Pandas loaders
     if suffix in {'.jsonl', '.jsonl.gz'}:
@@ -142,7 +168,7 @@ def load_seed_dataframe(path: Path) -> pd.DataFrame:
         df = pd.read_csv(path, encoding='utf-8', sep=None, engine='python')
 
     # 3. Identify text/label columns
-    text_candidates = ['text', 'question', 'prompt', 'input', 'pattern', 'patterns']
+    text_candidates = ['text', 'question', 'prompt', 'input', 'instruction', 'pattern', 'patterns']
     label_candidates = ['label', 'answer', 'response', 'output', 'responses']
     
     text_col = next((c for c in text_candidates if c in df.columns), None)
@@ -164,31 +190,68 @@ def load_seed_dataframe(path: Path) -> pd.DataFrame:
         
     return df.rename(columns={text_col: 'text', label_col: 'label'})
 
-def prepare_seed_data(file_path, sample_size):
-    """Loads and transforms the Kaggle mental health data into Alpaca format for use as seeds."""
-    print(f"Preparing seed data from {file_path}...")
-    df = load_seed_dataframe(Path(file_path))
-    df_sampled = df.sample(min(len(df), sample_size), random_state=42)
+def prepare_seed_data(seed_files_dict, sample_size):
+    """Loads and transforms seed data from multiple sources into Alpaca format.
     
-    seed_data = []
-    for index, row in df_sampled.iterrows():
-        # Transforming the 'mental health' context to a 'general health' context for the model to learn structure
-        instruction = row['text']
-        # Use a placeholder input since the original data is simple conversational
-        input_context = "Patient is generally well, seeking conversational advice." 
-        output_advice = row['label'] # Using the label/response as the 'output'
+    Args:
+        seed_files_dict: Dictionary mapping seed names to file paths
+        sample_size: Total number of samples to use across all seed files
+    
+    Returns:
+        List of seed data dictionaries in Alpaca format
+    """
+    print(f"Preparing seed data from {len(seed_files_dict)} file(s)...")
+    
+    all_seed_data = []
+    
+    # Load data from each seed file
+    for name, file_path in seed_files_dict.items():
+        if file_path is None:
+            continue
+            
+        print(f"  Loading {name}.json...")
+        df = load_seed_dataframe(Path(file_path))
         
-        # Add a simple conversion logic to general health for the prompt
-        if 'anxiety' in instruction.lower():
-            instruction = instruction.replace('anxiety', 'feeling stressed')
+        # Sample proportionally from each source
+        samples_from_this_file = min(len(df), sample_size // len(seed_files_dict))
+        df_sampled = df.sample(samples_from_this_file, random_state=42)
         
-        seed_data.append({
-            "instruction": instruction,
-            "input": input_context,
-            "output": output_advice
-        })
-    print(f"Prepared {len(seed_data)} seed samples.")
-    return seed_data
+        for index, row in df_sampled.iterrows():
+            instruction = row['text']
+            output_advice = row['label']
+            
+            # Context varies by source
+            if name == 'intents':
+                # Mental health conversational context
+                input_context = "Patient is generally well, seeking conversational advice."
+            else:
+                # First aid / medical advice context (claude/gemini)
+                input_context = "Patient is elderly (70+), seeking immediate first aid guidance."
+            
+            all_seed_data.append({
+                "instruction": instruction,
+                "input": input_context,
+                "output": output_advice,
+                "source": name  # Track which seed file this came from
+            })
+    
+    # Shuffle to mix different sources
+    import random
+    random.seed(42)
+    random.shuffle(all_seed_data)
+    
+    # Limit to target sample size
+    all_seed_data = all_seed_data[:sample_size]
+    
+    print(f"Prepared {len(all_seed_data)} seed samples from {len(seed_files_dict)} source(s).")
+    
+    # Print distribution by source
+    from collections import Counter
+    source_counts = Counter([s['source'] for s in all_seed_data])
+    for source, count in source_counts.items():
+        print(f"    - {source}: {count} samples")
+    
+    return all_seed_data
 
 ### B. Generation Script
 
@@ -203,6 +266,7 @@ def generate_synthetic_data(seed_data, target_size, gemini_client, qwen_client):
     
     # Topics for guided generation to ensure diversity and domain focus
     topics = [
+        # Geriatric-specific topics
         "Hydration and simple dietary advice for seniors",
         "Managing mild chronic pain (e.g., arthritis, backaches)",
         "Safety and fall prevention in the home",
@@ -212,7 +276,19 @@ def generate_synthetic_data(seed_data, target_size, gemini_client, qwen_client):
         "Addressing mild memory concerns and cognitive engagement",
         "Diabetes management for seniors",
         "Hypertension and heart health for 70+",
-        "Senior-safe exercise and mobility"
+        "Senior-safe exercise and mobility",
+        # First aid topics (from claude/gemini seed data)
+        "Treating minor cuts, burns, and bruises in elderly patients",
+        "Managing headaches and migraines safely for seniors",
+        "Dealing with nosebleeds and hiccups in older adults",
+        "Sore throat and cough relief for the elderly",
+        "Handling digestive issues (heartburn, constipation, nausea)",
+        "Eye strain, dry eyes, and vision comfort for seniors",
+        # Mental health topics (from intents seed data)
+        "Addressing loneliness and emotional well-being in seniors",
+        "Managing stress and anxiety in elderly patients",
+        "Sleep problems and insomnia in older adults",
+        "Coping with grief and loss in senior years"
     ]
     
     while generated_count < target_size:
@@ -287,14 +363,15 @@ def generate_synthetic_data(seed_data, target_size, gemini_client, qwen_client):
             
         except Exception as e:
             print(f"Generation failed with {model_name}: {e}")
-            time.sleep(5) # Cooldown
+            time.sleep(8) # Cooldown
             
     print(f"\n--- Stage 1 Complete. Data saved to {OUTPUT_FILE} ---")
     return synthetic_data
 if __name__ == "__main__":
-    # 1. Prepare Seed Data
-    seeds = prepare_seed_data(KAGGLE_SEED_PATH, SEED_SAMPLE_SIZE)
+    # 1. Prepare Seed Data from all available sources
+    seeds = prepare_seed_data(SEED_FILES, SEED_SAMPLE_SIZE)
     
     # 2. Run Generation
-    print(f"Starting generation pipeline with target size: {TARGET_GENERATION_SIZE}")
+    print(f"\nStarting generation pipeline with target size: {TARGET_GENERATION_SIZE}")
+    print(f"Using teacher models: {GEMINI_MODEL} and {QWEN_MODEL}")
     generate_synthetic_data(seeds, TARGET_GENERATION_SIZE, gemini_client, qwen_client)

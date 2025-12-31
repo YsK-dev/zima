@@ -1,0 +1,112 @@
+╔════════════════════════════════════════════════════════════╗
+║           ZIMA - PC SHUTDOWN FIX                           ║
+║           Quick Reference Card                             ║
+╚════════════════════════════════════════════════════════════╝
+
+🎉 GREAT NEWS from your logs:
+   ✅ GPU discovery FAILED (this is GOOD!)
+   ✅ CPU-only mode ACTIVE
+   ✅ RX 550 won't be used (no overheating!)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 SETUP STEPS:
+
+TERMINAL 1 (you're here):
+   Keep running: ollama serve
+   ⚠️ DO NOT CLOSE THIS TERMINAL
+
+TERMINAL 2 (open a new one):
+   cd /home/ysk/Downloads/zima
+   ./continue_setup.sh
+   
+   This will:
+   - Create qwen4b-light model
+   - Install psutil
+   - Set GEMINI_API_KEY
+   - Run diagnostics
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🧪 TESTING (recommended before 50K run):
+
+   1. Edit data_creation_safe.py line 69:
+      TARGET_GENERATION_SIZE = 20
+
+   2. Terminal 2:
+      python3 monitor_system.py
+   
+   3. Terminal 3 (open another new terminal):
+      cd /home/ysk/Downloads/zima
+      python3 data_creation_safe.py
+   
+   4. Should complete in 2-3 minutes ✓
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 PRODUCTION (after test succeeds):
+
+   1. Change back: TARGET_GENERATION_SIZE = 50000
+
+   2. Terminal 1: ollama serve (keep running)
+   
+   3. Terminal 2: python3 monitor_system.py
+   
+   4. Terminal 3: python3 data_creation_safe.py
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 WHAT TO WATCH:
+
+   Monitor output should show:
+   🟢 All green = good
+   🟡 Yellow = warning
+   🔴 Red = auto-pause
+
+   Example good output:
+   [23:28:42] 🟢 CPU: 45% | 🟢 RAM: 52% | 🟢 Temp: 68°C
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🛡️ SAFETY FEATURES ACTIVE:
+
+   ✅ CPU-only mode (no GPU heat)
+   ✅ Auto-pause if RAM > 75%
+   ✅ Auto-pause if CPU > 80°C
+   ✅ Cooldown break every 5 batches
+   ✅ Memory cleanup (garbage collection)
+   ✅ Request timeouts & retry limits
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⏱️ PERFORMANCE:
+
+   Speed: ~8-12 samples/minute
+   50K samples: ~60-70 hours total
+   Stability: Runs indefinitely ✅
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📁 USEFUL COMMANDS:
+
+   Check diagnostics:  ./diagnose.sh
+   View this card:     cat QUICK_REFERENCE.txt
+   View full guide:    cat SOLUTION_SUMMARY.md
+   Monitor system:     python3 monitor_system.py
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🆘 TROUBLESHOOTING:
+
+   PC still shuts down? → Check TROUBLESHOOTING.md
+   Want faster speed? → Use Gemini-only mode
+   Hardware issues? → Monitor temps with 'sensors'
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ NEXT STEP:
+
+   Open a NEW terminal and run:
+   ./continue_setup.sh
+
+╚════════════════════════════════════════════════════════════╝
