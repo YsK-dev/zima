@@ -1,6 +1,6 @@
 # Lightning.ai Data Generation Guide 🚀
 
-## Perfect Solution!
+## Solution
 
 **Lightning.ai** gives you:
 - ✅ **NVIDIA L40 GPU** (48GB VRAM - enterprise grade!)
@@ -9,6 +9,7 @@
 - ✅ **Fast generation** (~15,000-20,000 samples in 4 hours)
 
 ---
+ı got samples of around  10,000 had some problems with enthernet connection and want it to leave some tokens for the next session 
 
 ## Quick Start (5 Steps)
 
