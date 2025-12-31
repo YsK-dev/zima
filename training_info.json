@@ -1,0 +1,11 @@
+{
+  "model_name": "unsloth/Qwen2.5-1.5B-Instruct",
+  "train_samples": 9700,
+  "val_samples": 1078,
+  "epochs": 3,
+  "batch_size": 8,
+  "learning_rate": 0.0002,
+  "lora_r": 16,
+  "lora_alpha": 32,
+  "final_loss": "N/A"
+}

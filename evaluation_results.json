@@ -1,0 +1,357 @@
+{
+  "perplexity": 1.5059734582901,
+  "validation_samples": 1078,
+  "generated_samples": 50,
+  "samples": [
+    {
+      "instruction": "I feel lonely",
+      "input": "Patient is elderly (70+), seeking advice on emotional well-being.",
+      "expected": "Reach out to family and friends for a chat, or consider joining local clubs that match your interests. Consider volunteering or participating in community activities.",
+      "generated": "Try joining clubs or groups where you can meet people with similar interests. Consider volunteering to help others and connect socially. Regular phone calls can also keep relationships strong. Talk to a counselor if loneliness feels overwhelming.<|endoftext|>",
+      "generation_time": "3.30s"
+    },
+    {
+      "instruction": "I cut my hand deeply with a knife and it will not stop bleeding.",
+      "input": "Patient is elderly (70+), seeking immediate first aid guidance.",
+      "expected": "Call 911 or your local emergency number immediately. While waiting for help, use a clean cloth or sterile gauze to apply firm, continuous pressure directly to the wound. Do not lift the cloth to check the wound. If the cloth soaks through, place another one directly on top and keep pressing. Keep your hand elevated above the level of your heart.",
+      "generated": "If you can't stop the bleeding after 15 minutes of applying firm pressure, please call emergency services immediately. Until help arrives, do not remove your bandage or use another to apply additional pressure - keep doing whatever you were doing until help comes. If you have an automatic external defibrillator available, start CPR while calling for help. Do not leave the scene until professional medical assistance has taken over treatment. Keep the wound clean and dry if possible. If it's a small cut where there isn't any major blood loss, you can usually take care of it yourself by cleaning the area well with mild soap and water. Then cover it with a simple bandage. But this may be an indication that something else like shock might be happening. So, call for help right away. We need to know what we are dealing with here before we try to treat it. It looks like severe trauma. Please get emergency help as soon as possible.<|endoftext|>",
+      "generation_time": "10.91s"
+    },
+    {
+      "instruction": "I have a cold",
+      "input": "Patient is elderly (70+), seeking immediate first aid guidance.",
+      "expected": "Rest, drink plenty of fluids like warm water and herbal tea. Use saline nasal spray for congestion. Consider over-the-counter decongestants or cough medicine as directed by your pharmacist.",
+      "generated": "Rest and drink plenty of fluids like warm water, tea or soup. Use saline nasal spray to clear congestion. Take over-the-counter decongestants if needed. Avoid close contact with others. See your doctor for severe symptoms. Stay home until you feel better.<|endoftext|>",
+      "generation_time": "3.15s"
+    },
+    {
+      "instruction": "How can I safely start an exercise routine at my age?",
+      "input": "Patient is 75 years old, interested in starting light exercises.",
+      "expected": "Consult your doctor first. Start with short walks or gentle stretching. Increase slowly as you get used to it. Stay within comfort limits.",
+      "generated": "Start slowly and gradually increase intensity. Choose low-impact activities like walking or swimming. Consult your doctor first to ensure it's safe for you. Begin with short sessions (10-15 minutes) and add time as you feel comfortable. Focus on balance and safety. Always warm up before exercising. Cool down afterwards too. Stay hydrated and listen to your body. If you feel pain or discomfort, stop immediately. Consider joining a senior fitness class. Keep track of how you feel each day. Discuss changes with your doctor regularly. Aim for consistency rather than pushing too hard initially. Remember to rest when needed.<|endoftext|>",
+      "generation_time": "7.07s"
+    },
+    {
+      "instruction": "I'm feeling stressed about my health",
+      "input": "Patient is 78 years old, concerned about frequent doctor visits and medication.",
+      "expected": "Take some deep breaths to relax. Focus on positive aspects of your life. Stay socially active with friends and family.",
+      "generated": "Take time to relax each day. Focus on activities you enjoy or hobbies. Discuss your concerns openly with family members or a friend. Consider joining a support group for seniors. Regular exercise can help reduce stress too! Talk to your healthcare provider if unsure how to manage.<|endoftext|>",
+      "generation_time": "3.17s"
+    },
+    {
+      "instruction": "I feel overwhelmed by daily tasks",
+      "input": "Patient is elderly (70+), seeking advice.",
+      "expected": "Try to break tasks into smaller steps and do one at a time. Prioritize what needs to be done first. Consider asking for help from family or friends.",
+      "generated": "Prioritize your tasks and break them into smaller steps. Delegate or ask for help when needed. Focus on one thing at a time to avoid feeling exhausted. Take short breaks throughout the day. Speak to your doctor if this continues.<|endoftext|>",
+      "generation_time": "2.74s"
+    },
+    {
+      "instruction": "I am having trouble sleeping at night.",
+      "input": "Patient is 74 years old, experiencing insomnia.",
+      "expected": "Try a warm bath before bed and limit caffeine and alcohol. Establish a regular bedtime routine, read or listen to soft music. If you can't sleep after 20 minutes, get out of bed and do something calming like reading until sleepy.",
+      "generated": "Establish a bedtime routine and stick to it each day. Avoid caffeine late in the afternoon and evening. Keep your bedroom dark, quiet, and cool. Try relaxation techniques like deep breathing or meditation before bed. Consult your doctor if this persists.<|endoftext|>",
+      "generation_time": "2.86s"
+    },
+    {
+      "instruction": "I have stomach pain and diarrhea",
+      "input": "Patient is elderly (70+), seeking immediate first aid guidance.",
+      "expected": "Stay hydrated by sipping on clear fluids like water or broth. Avoid dairy, fatty foods, and caffeine until you feel better. Try BRAT diet (bananas, rice, applesauce, toast). If symptoms persist for more than a day, consult your doctor.",
+      "generated": "Drink plenty of fluids to avoid dehydration. Try clear broths or ginger ale. Avoid dairy products for now. Over-the-counter anti-diarrheal medication may help if needed. Rest in a quiet room. If symptoms persist more than 2 days, see your doctor. Consult before use.<|endoftext|>",
+      "generation_time": "3.51s"
+    },
+    {
+      "instruction": "How can I manage my blood sugar effectively?",
+      "input": "Patient is 74 years old, newly diagnosed with Type 2 diabetes.",
+      "expected": "Monitor your blood glucose regularly as prescribed. Eat a balanced diet rich in vegetables and whole grains. Exercise moderately daily if possible. Take medications exactly as directed by your doctor.",
+      "generated": "Monitor your diet closely - eat balanced meals and snacks. Exercise regularly but consult your doctor first. Take medications as prescribed by your healthcare provider. Regular check-ups are key to keeping blood glucose under control. Stay hydrated throughout the day. Limit sugary drinks. Consult your pharmacist for safe over-the-counter meds if needed. Remember, this should be tailored to fit your lifestyle and medical history. Please talk to your doctor before starting any new treatments or supplements.<|endoftext|>",
+      "generation_time": "5.20s"
+    },
+    {
+      "instruction": "I have a nosebleed",
+      "input": "Patient is elderly (70+), seeking immediate first aid guidance.",
+      "expected": "Sit up straight and tilt your head slightly forward. Pinch the soft part of your nose just below the bridge for at least ten minutes. Breathe through your mouth. If bleeding doesn't stop, apply ice to the bridge of the nose.",
+      "generated": "Sit upright and lean forward slightly. Pinch your nostrils shut for at least 10 minutes without letting go to breathe through them. Avoid lying down or tilting head back. If bleeding doesn't stop after 20 mins, seek medical help. Keep away from cold air. Use saline nasal sprays if needed. Stay hydrated. Eat well balanced meals rich in vitamin C and K. Apply ice packs to cheeks and bridge of nose. Don't rub or pick. Drink plenty of fluids. Monitor blood pressure. Report unusual symptoms to doctor. Always use clean hands when applying ice. Do not blow nose forcefully. Stop pinching only until bleeding stops then rest quietly. If it happens often, see ENT specialist. Remember - prevention is key! Keep tissues handy. Inform others about symptoms so they know what to do too.<|endoftext|>",
+      "generation_time": "9.51s"
+    },
+    {
+      "instruction": "I'm feeling forgetful lately",
+      "input": "Patient is 74 years old, reports increased forgetfulness over the past month.",
+      "expected": "Try using a memory aid like a planner or smartphone reminders. Regular exercise and brain games can help too. Stay socially active to keep your mind sharp.",
+      "generated": "Try writing things down more often or using a calendar/planner. Regular exercise and social activities can help too! If it continues to concern you, discuss it with your doctor at your next visit.<|endoftext|>",
+      "generation_time": "2.36s"
+    },
+    {
+      "instruction": "How do I manage my diabetes better with diet?",
+      "input": "",
+      "expected": "Eat a balanced diet with whole grains, lean proteins, fruits, and vegetables. Space meals evenly throughout the day and avoid sugary drinks.",
+      "generated": "Eat balanced meals at regular times. Include whole grains, vegetables, fruits, lean proteins and healthy fats. Limit sugary drinks and snacks. Consult a dietician for personalized advice.<|endoftext|>",
+      "generation_time": "2.23s"
+    },
+    {
+      "instruction": "I want to start an exercise program, what should I do?",
+      "input": "Patient is 72 years old and hasn't exercised for a long time.",
+      "expected": "Talk to your doctor first. Start with gentle activities like walking or swimming. Focus on safety and gradual progress. Wear comfortable shoes and clothing.",
+      "generated": "Start slowly - try walking or swimming. Choose activities you enjoy. Consult your doctor before starting any new routine. Gradually increase duration and intensity as tolerated. Always warm up and cool down. Stay hydrated and listen to your body. Consider working with a physical therapist if needed.<|endoftext|>",
+      "generation_time": "3.25s"
+    },
+    {
+      "instruction": "I am dealing with the loss of my spouse",
+      "input": "Patient is 73 years old, recently lost their partner.",
+      "expected": "It's normal to feel intense sadness and loneliness. Consider talking to a counselor or joining a bereavement support group. Keep routines but allow yourself time to grieve.",
+      "generated": "It's normal to feel overwhelmed and lonely. Seek support from family or friends, join a grief support group for companionship. Allow yourself time to grieve but also try new activities or hobbies to keep busy. Remember it’s okay not to be okay yet. Talk about your feelings openly. Consult a counselor if needed.<|endoftext|>",
+      "generation_time": "3.74s"
+    },
+    {
+      "instruction": "I am feeling a bit confused and my mouth is very dry.",
+      "input": "Patient is elderly (70+), exhibiting signs of potential dehydration.",
+      "expected": "These can be signs of dehydration. Please sit down and slowly sip some water or a rehydration drink. If you feel dizzy, have a rapid heartbeat, or if the confusion gets worse, please call 911 or your local emergency services immediately.",
+      "generated": "Drink small sips of water or try sucking on ice chips to help moisten your throat. Avoid caffeine as it can make symptoms worse. If confusion continues, consult your doctor. Keep some juice nearby for a drink if you forget. Eat fruits high in water like oranges or melons too. Rest is important too. Let us know if this happens often. I'm here for questions about daily care. Hope you feel better soon!<|endoftext|>",
+      "generation_time": "4.99s"
+    },
+    {
+      "instruction": "I'm forgetful lately and worried about dementia",
+      "input": "",
+      "expected": "It’s normal for memory to change with age, but persistent worry is not. Try brain exercises like crossword puzzles or reading daily to keep your mind active. If worries persist, see a doctor who can help address your concerns.",
+      "generated": "It’s normal to experience some memory slips as you age. Keep active mentally by doing puzzles or reading. Regular exercise can help too. If worries persist, speak with your doctor. Stay socially engaged and get enough sleep.<|endoftext|>",
+      "generation_time": "2.59s"
+    },
+    {
+      "instruction": "I have a charley horse",
+      "input": "Patient is elderly (70+), seeking immediate first aid guidance.",
+      "expected": "Stretch the cramped muscle immediately - straighten your leg and flex your foot upward. Massage the muscle firmly with your hands. Walk around once you can. Apply heat to relax the muscle. Drink water and consider electrolyte replacement.",
+      "generated": "Stretch the cramped muscle immediately - straighten your leg and flex your foot upward. Massage the muscle firmly with your hands. Walk around once you can. Apply heat to relax the muscle. Drink water and consider electrolyte replacement. If it doesn't improve in hours, see a doctor.<|endoftext|>",
+      "generation_time": "3.33s"
+    },
+    {
+      "instruction": "I'm having a nosebleed",
+      "input": "Patient is elderly (70+), seeking immediate first aid guidance.",
+      "expected": "Sit upright, lean forward slightly and pinch the soft part of your nose. Breathe through your mouth for 10 minutes. Avoid lying down or tilting back your head. If bleeding doesn't stop after 20 minutes, seek medical help.",
+      "generated": "Sit upright and lean forward slightly. Pinch your nostrils shut for about 10 minutes while breathing through mouth. Avoid lying down or tilting head back to prevent swallowing blood. If bleeding doesn't stop after 20 minutes, seek medical help. Stay calm.<|endoftext|>",
+      "generation_time": "3.21s"
+    },
+    {
+      "instruction": "How do I cope with the loss of a spouse?",
+      "input": "Patient is elderly (70+), recently lost their partner, needs emotional support advice.",
+      "expected": "Allow yourself to grieve and express your feelings. Join a support group for widowed individuals. Consider activities you both used to enjoy together. Keep in touch with friends and family. Seek professional help if needed.",
+      "generated": "It's normal to feel overwhelmed. Reach out for help from family or friends. Consider joining a bereavement group where you can share your feelings safely. Allow yourself time to grieve and remember them fondly. Seek professional counseling if needed. Remember it’s okay to ask for help.<|endoftext|>",
+      "generation_time": "3.39s"
+    },
+    {
+      "instruction": "How do I manage multiple medications?",
+      "input": "Patient is 75 years old, taking several prescribed medicines for different conditions.",
+      "expected": "Use a medication organizer to keep track of your pills. Set reminders on your phone or a pill box to ensure you take the right ones at the right times. Check with your pharmacist about potential drug interactions.",
+      "generated": "Use a pill organizer to keep track of your daily doses. Ask your pharmacist or doctor about medication review and simplification options. Make sure each medication has a clear label indicating when to take it. Keep all prescriptions up-to-date with refill reminders. Consult your healthcare provider before starting new supplements or over-the-counter drugs.<|endoftext|>",
+      "generation_time": "3.65s"
+    },
+    {
+      "instruction": "How can I prevent falls while walking outside?",
+      "input": "Patient is an elderly woman (78 years old), looking for advice to avoid outdoor accidents.",
+      "expected": "Use a cane or walker if needed. Wear proper footwear with good traction. Use handrails on sidewalks and steps. Walk in well-lit areas during nighttime.",
+      "generated": "Use sturdy shoes with good traction. Walk on flat surfaces and avoid uneven ground or steps. Use a cane or walker if needed for stability. Wear bright clothing so you are easily seen by others. Be cautious at night. Have someone accompany you if walking alone.<|endoftext|>",
+      "generation_time": "3.23s"
+    },
+    {
+      "instruction": "I have a sudden nosebleed - what should I do?",
+      "input": "Patient is elderly (70+), seeking immediate first aid guidance.",
+      "expected": "Sit upright, lean forward slightly and pinch the soft part of your nose just below the bony bridge. Hold for at least 10 minutes.",
+      "generated": "Sit upright and lean forward slightly to avoid swallowing blood. Pinch your nostrils shut for at least 10 minutes without letting go or tilting back head. If bleeding doesn't stop in this time, seek medical help immediately. Use ice packs on cheeks to constrict blood vessels. Afterward, stay calm and don’t blow nose for several hours.<|endoftext|>",
+      "generation_time": "4.25s"
+    },
+    {
+      "instruction": "I'm having trouble sleeping at night",
+      "input": "Patient is elderly (70+), seeking advice for sleep issues.",
+      "expected": "Establish a regular bedtime routine. Avoid caffeine and heavy meals before bed. Use your bedroom only for sleep or sex to strengthen the association between your bed and sleep. Try relaxation techniques like deep breathing or meditation.",
+      "generated": "Try to maintain a regular bedtime routine and avoid caffeine late in the day. Make your bedroom comfortable - cool temperature helps too. Consider relaxation techniques like deep breathing or meditation before bed. If problems persist, consult your doctor. Remember, safety comes first when using any sleeping aids. Always read labels carefully. Keep keys out of reach to prevent falls at night. Use night lights to reduce darkness hazards. Wear slippers indoors to protect heels from sharp edges on floors. Check local codes for safe housekeeping practices. Stay active but not overly so near bed time. Talk with friends about activities you enjoy doing during daytime. Ensure pets are well behaved enough to keep themselves occupied without disturbing others. Avoid alcohol close to bedtime as it can disrupt REM cycles and cause fatigue later awake. Discuss these concerns with your healthcare provider who may offer additional guidance or prescription medications if needed.<|endoftext|>",
+      "generation_time": "9.74s"
+    },
+    {
+      "instruction": "I can't fall asleep at night",
+      "input": "Patient is 78 years old, seeking advice for sleep issues.",
+      "expected": "Try establishing a regular bedtime routine and avoid caffeine late in the day. Use your bed only for sleeping, not reading or watching TV. If you're still awake after 20 minutes, get up and do something relaxing until you feel sleepy.",
+      "generated": "Establish a regular bedtime routine and stick to it every day. Avoid screens (TV, phone) before bed. Make sure your room is dark, quiet, and cool. Consider relaxation techniques like deep breathing or meditation. If you're still awake after 20 minutes, get out of bed and read until sleepy. Try again in half an hour if needed. Keep a journal nearby for dreams and worries. Talk to your doctor about safe sleeping aids.<|endoftext|>",
+      "generation_time": "5.22s"
+    },
+    {
+      "instruction": "How do I manage my blood sugar levels throughout the day?",
+      "input": "Patient is an elderly adult with type 2 diabetes, seeking guidance for daily management.",
+      "expected": "Monitor your blood glucose regularly. Stick to a balanced diet with consistent meal times and portion control. Take medications as prescribed. Exercise within limits, aiming for at least 30 minutes of moderate activity most days.",
+      "generated": "Check your blood glucose regularly as prescribed. Eat balanced meals and snacks. Exercise moderately if possible. Take medications on time. Monitor for any changes in diet or activity patterns. Consult your healthcare provider for adjustments. Keep emergency supplies like glucagon handy. Stay hydrated. Remember to rest after exercise. Discuss concerns with your doctor.<|endoftext|>",
+      "generation_time": "3.78s"
+    },
+    {
+      "instruction": "I've lost my spouse and feel extremely lonely",
+      "input": "Patient is elderly (70+), experiencing grief.",
+      "expected": "It’s normal to feel very alone. Reach out to friends or family for support. Consider joining a group where you can meet others in similar situations.",
+      "generated": "It's normal to feel very alone. Consider joining a support group or club where you can meet others in similar situations. Reach out to friends for company and talk about your feelings regularly. Remember self-care like eating well and staying active as much as possible. Seek professional help if needed.<|endoftext|>",
+      "generation_time": "3.35s"
+    },
+    {
+      "instruction": "How can I reduce my risk of falls at home?",
+      "input": "Patient is elderly (70+), looking for practical advice to prevent falls.",
+      "expected": "Improve lighting, remove clutter, secure rugs, install railings in hallways and bathroom. Use non-slip mats and grip strips on bath surfaces.",
+      "generated": "Remove clutter from walkways and hallways. Install grab bars near the toilet, shower, and bathtub. Use non-slip mats in bathrooms. Ensure good lighting throughout your house. Wear sturdy shoes with rubber soles indoors too. Talk to a professional about fall-proofing your living space.<|endoftext|>",
+      "generation_time": "3.38s"
+    },
+    {
+      "instruction": "How can I reduce eye strain when reading?",
+      "input": "Patient is 75 years old, frequently reads books and newspapers.",
+      "expected": "Use a good reading light that doesn't cause glare. Take breaks every 20 minutes by looking away and focusing on something far. Adjust your seating to avoid straining your neck or back.",
+      "generated": "Use good lighting - avoid direct glare from screens or books. Take frequent breaks using the 20-20 rule: look at something far away for twenty seconds then back at close objects for twenty seconds. Adjust text size on devices to be comfortable. Stay hydrated! If discomfort persists see an optometrist.<|endoftext|>",
+      "generation_time": "3.73s"
+    },
+    {
+      "instruction": "I have a nosebleed",
+      "input": "Patient is elderly (70+), seeking immediate first aid guidance.",
+      "expected": "Sit upright and lean forward. Pinch the soft part of your nose just below the bony bridge for at least 10 minutes. Avoid lying down or tilting back your head. Breathe through your mouth.",
+      "generated": "Sit upright and lean forward slightly. Pinch your nostrils together just below the bridge of your nose for about 10 minutes without releasing pressure to check if bleeding has stopped. Avoid lying down or tilting head back. If it doesn't stop in 20-30 mins, seek medical help. Keep away from triggers like cold air. Drink plenty of fluids. Eat healthy foods rich in Vitamin C and K. Rest. Avoid straining after bleeding stops. Use ice packs on cheeks for comfort. Call doctor if recurring frequently. Remember these steps! Stay safe! :)<|endoftext|>",
+      "generation_time": "6.69s"
+    },
+    {
+      "instruction": "How can I prevent falls at home?",
+      "input": "Patient is elderly (70+), wants advice for fall prevention.",
+      "expected": "Ensure all rooms have good lighting. Remove loose rugs and clutter. Install grab bars in the bathroom. Use non-slip mats in showers and bathtubs.",
+      "generated": "Install handrails near stairs and in bathrooms. Use non-slip mats or decals in showers/baths. Keep floors clutter-free to avoid tripping hazards. Wear sturdy shoes with good traction indoors too. Ensure adequate lighting throughout your house. Talk to a professional about grab bars if needed. Consider night lights for better visibility at night. Regular inspections by a handyman are also helpful. Remember these tips!<|endoftext|>",
+      "generation_time": "4.64s"
+    },
+    {
+      "instruction": "Can I nap during the day because of my insomnia?",
+      "input": "Patient is 84 years old, feels tired due to lack of sleep at night.",
+      "expected": "Limit daytime naps as they can interfere with nighttime sleep. If you must nap, keep it short and early in the afternoon.",
+      "generated": "Try short naps but not too close to bedtime. Take them in a quiet room and keep it under control - aim for no more than 20-30 minutes if you can stay awake without falling asleep after waking up. If daytime drowsiness persists or worsens, talk to your doctor about possible causes and treatments.<|endoftext|>",
+      "generation_time": "3.88s"
+    },
+    {
+      "instruction": "I have a headache",
+      "input": "Patient is elderly (70+), seeking immediate first aid guidance.",
+      "expected": "Sit or lie down quietly. Apply cool compress to forehead and/or neck for comfort. Drink plenty of water and stay hydrated. Avoid triggers like bright lights, loud noises, and strong smells.",
+      "generated": "Rest quietly in a dark room. Place cold or warm compresses on your forehead for comfort. Drink plenty of water and avoid caffeine if you've had too much recently. If pain persists more than 24 hours or worsens, see a doctor.<|endoftext|>",
+      "generation_time": "3.02s"
+    },
+    {
+      "instruction": "How can I relieve a tension headache?",
+      "input": "Patient is 76 years old, experiencing mild-to-moderate pain.",
+      "expected": "Rest with eyes closed in a quiet room. Apply heat or cold compresses to head/neck. Drink plenty of water and avoid caffeine/alcohol.",
+      "generated": "Rest quietly in a dark room. Use cold compresses on your forehead or neck for relief. Avoid caffeine and bright lights until symptoms subside. Over-the-counter pain relievers like acetaminophen may help. Drink plenty of water to stay hydrated. If headaches persist, see your doctor.<|endoftext|>",
+      "generation_time": "3.44s"
+    },
+    {
+      "instruction": "How can I get rid of a sore throat quickly?",
+      "input": "Patient is elderly (70+), seeking immediate first aid guidance.",
+      "expected": "Gargle with warm salt water. Suck on throat lozenges or hard candies. Drink plenty of fluids like tea with honey and lemon. Rest your voice.",
+      "generated": "Gargle with warm salt water several times daily. Drink plenty of fluids like tea or soup to soothe your throat. Rest and avoid irritants such as smoke or dust. Over-the-counter lozenges can help provide relief. If symptoms persist for more than a week see your doctor.<|endoftext|>",
+      "generation_time": "3.52s"
+    },
+    {
+      "instruction": "I am having trouble sleeping at night despite feeling very tired during the day",
+      "input": "Patient is elderly (70+), seeking advice for sleep disturbances.",
+      "expected": "Try going to bed and waking up at consistent times. Avoid naps in the afternoon and reduce fluid intake before bedtime. Use your bedroom only for sleep and sex, not for watching TV or reading. Create a calming routine before sleep.",
+      "generated": "Establish a regular bedtime routine and stick to it every day. Limit caffeine intake after noon, avoid screens before bed. Consider relaxation techniques like deep breathing or meditation. Ensure your bedroom is dark, quiet, cool, and comfortable for sleeping. If issues persist, discuss them with your doctor.<|endoftext|>",
+      "generation_time": "3.33s"
+    },
+    {
+      "instruction": "I feel lonely during the pandemic",
+      "input": "Patient is elderly (70+), seeking advice for emotional well-being.",
+      "expected": "Reach out to friends and family via phone or video calls. Join virtual support groups. Consider online activities like puzzles, games, or learning a new skill.",
+      "generated": "Stay connected by phone or video chat with family and friends. Join online communities based on your interests to meet new people safely. Consider local senior centers offering virtual activities if they allow older adults. Remember to maintain social distance while keeping connections strong. Talk openly about how you're feeling. If loneliness persists, speak to a counselor.<|endoftext|>",
+      "generation_time": "3.76s"
+    },
+    {
+      "instruction": "How can I improve my memory?",
+      "input": "Patient is 76 years old, concerned about recent memory lapses.",
+      "expected": "Try puzzles like crosswords and Sudoku. Engage in regular social activities. Eat a balanced diet rich in fish, nuts, vegetables. Exercise regularly to boost blood flow to the brain.",
+      "generated": "Try brain exercises like crosswords or Sudoku. Stay socially active and engage in conversations regularly. Keep a routine to reduce confusion. Consult your doctor if you're worried about changes.<|endoftext|>",
+      "generation_time": "2.16s"
+    },
+    {
+      "instruction": "I have a headache and nausea",
+      "input": "Patient is elderly (70+), seeking immediate first aid guidance.",
+      "expected": "Drink plenty of fluids, try ginger ale or clear soups. Rest in a quiet room with minimal light. Take over-the-counter pain medication as directed by your healthcare provider.",
+      "generated": "Stay hydrated by drinking small sips of water or ginger ale. Rest in a quiet room away from bright lights. Avoid strong odors if you're sensitive to them. If symptoms worsen or persist for more than one day, see your doctor. Over-the-counter pain relief as directed. Eat bland foods like crackers and soup once you can keep down.<|endoftext|>",
+      "generation_time": "4.10s"
+    },
+    {
+      "instruction": "What can I do about my headache?",
+      "input": "Patient is elderly (70+), seeking immediate first aid guidance.",
+      "expected": "Try lying down in a dark, quiet room. Use a cold pack on your forehead or the back of your neck for 15 minutes. Stay hydrated and avoid triggers like strong smells.",
+      "generated": "Rest quietly in a dimly lit room. Apply warm or cold compresses to your head for comfort. Stay hydrated and eat light meals if hungry. Avoid alcohol and caffeine. If it persists beyond one day, contact your doctor.<|endoftext|>",
+      "generation_time": "2.73s"
+    },
+    {
+      "instruction": "My eyes feel strained after reading",
+      "input": "Patient is an elderly individual over 70 years old, experiencing visual discomfort.",
+      "expected": "Take a break every 20 minutes and look into the distance for at least 20 seconds. Use good lighting to reduce eye strain. Increase font size or use a magnifier if necessary.",
+      "generated": "Take breaks every hour to rest your eyes. Use artificial tears for dryness if needed. Ensure proper lighting while reading and work in a quiet environment. Consider larger print or magnifiers if necessary. Consult an eye doctor regularly.<|endoftext|>",
+      "generation_time": "2.65s"
+    },
+    {
+      "instruction": "I'm having trouble remembering what medications I should take today",
+      "input": "Patient is elderly (70+), has multiple daily medication regimens.",
+      "expected": "Keep a list of all your medications and when you should take them. Use pill organizers to keep track of each day’s pills. Double-check the organizer with your doctor or pharmacist as needed.",
+      "generated": "Keep a pill organizer or use prescription refills to avoid confusion. Check each morning for new doses and mark them off in your schedule. Ask pharmacist or doctor about reminder apps or pills with alarms. Stay organized!<|endoftext|>",
+      "generation_time": "2.50s"
+    },
+    {
+      "instruction": "What should I do for chronic lower back pain?",
+      "input": "Patient is 78 years old, suffers from ongoing low back issues.",
+      "expected": "Try gentle stretching and light aerobic exercise. Apply heat or cold packs as needed. Over-the-counter pain relievers may help. See a doctor if worsens.",
+      "generated": "Try gentle exercises like walking or swimming. Apply heat packs to relieve stiffness. Take over-the-counter NSAIDs as directed by your doctor. Maintain good posture and use ergonomic supports. If symptoms worsen, consult your healthcare provider.<|endoftext|>",
+      "generation_time": "2.65s"
+    },
+    {
+      "instruction": "I have a persistent cough",
+      "input": "Patient is elderly (70+), seeking immediate first aid guidance.",
+      "expected": "Stay hydrated with lots of fluids. Use a humidifier or take steamy showers to ease congestion. Over-the-counter expectorants can help if mucus is thick and sticky. Rest and avoid irritants like smoke and dust.",
+      "generated": "Stay hydrated and get plenty of rest. Use over-the-counter cough medicine as directed by your pharmacist or doctor. If it lasts more than two weeks despite home treatment, see a healthcare provider. Avoid smoking and secondhand smoke. Wash hands frequently to prevent spread of germs.<|endoftext|>",
+      "generation_time": "3.23s"
+    },
+    {
+      "instruction": "I have a bruise from falling",
+      "input": "Patient is elderly (70+), seeking immediate advice.",
+      "expected": "Apply ice for 15 minutes every hour. Elevate the injured area and stay off your feet as much as possible. Take over-the-counter pain relievers if needed.",
+      "generated": "Apply ice wrapped in cloth for 15 minutes to reduce swelling and pain. Elevate your leg above heart level if it's on the lower body. Take over-the-counter pain relief as directed by your doctor. Rest until fully healed. See a doctor if you can't move or feel numbness.<|endoftext|>",
+      "generation_time": "3.54s"
+    },
+    {
+      "instruction": "I have a cold",
+      "input": "Patient is elderly (70+), seeking immediate first aid guidance.",
+      "expected": "Rest, drink plenty of fluids like water or warm tea. Use saline nasal drops for congestion. Gargle with salt water if your throat hurts. Take over-the-counter decongestants as needed.",
+      "generated": "Rest and drink plenty of fluids like water or warm soup. Use saline nasal spray to relieve congestion. Take over-the-counter decongestants as directed by your doctor. Avoid close contact with others. If symptoms worsen or last more than 10 days see a doctor. Stay hydrated!<|endoftext|>",
+      "generation_time": "3.45s"
+    },
+    {
+      "instruction": "I need help managing my diabetes.",
+      "input": "Patient is 78 years old with type 2 diabetes, looking for basic advice.",
+      "expected": "Monitor blood sugar regularly. Follow a balanced diet and exercise as recommended by your doctor. Take medications as prescribed. Check feet daily for cuts or blisters.",
+      "generated": "Keep a balanced diet rich in vegetables and whole grains. Check your blood sugar regularly as directed by your doctor. Exercise moderately daily if possible. Take medications on time without skipping doses. Consult your healthcare provider for any changes in treatment.<|endoftext|>",
+      "generation_time": "2.71s"
+    },
+    {
+      "instruction": "How do I stop a nosebleed?",
+      "input": "Patient is elderly (70+), seeking immediate first aid guidance.",
+      "expected": "Sit upright and lean slightly forward. Pinch the soft part of your nose just below the bridge between your nostrils for at least 10 minutes. Breathe through your mouth during this time. Avoid lying down or tilting your head back.",
+      "generated": "Sit upright and lean forward slightly. Pinch your nostrils shut for about 10 minutes. Breathe through your mouth. Don't lie down or tilt head back. If bleeding doesn’t stop after 20 mins, seek medical help.<|endoftext|>",
+      "generation_time": "3.02s"
+    },
+    {
+      "instruction": "How do I stop a nosebleed?",
+      "input": "Patient is elderly (70+), has started experiencing frequent nosebleeds.",
+      "expected": "Sit upright, lean slightly forward and pinch your nose just above the nostrils. Hold for 10 minutes. Breathe through your mouth. Once bleeding stops, avoid bending down or lifting heavy objects for at least an hour.",
+      "generated": "Sit upright and lean slightly forward. Pinch your nostrils shut for prevent blood from flowing back down into your throat. Breathe through your mouth. Hold for ten minutes without releasing pressure to check if bleeding has stopped. If it continues after 20 tries or starts again soon, see a doctor. Avoid lying down or tilting head back.<|endoftext|>",
+      "generation_time": "4.14s"
+    },
+    {
+      "instruction": "How can I find quick relief for a sore throat?",
+      "input": "Patient is elderly (70+), seeking immediate first aid guidance.",
+      "expected": "Try gargling with warm salt water. Drink plenty of fluids, such as tea with honey or lemon. Use over-the-counter lozenges to soothe your throat.",
+      "generated": "Try gargling with warm salt water several times per day. Drink plenty of fluids like hot tea or soup to soothe your throat. Rest and avoid irritants such as smoke or dust. Over-the-counter lozenges can help provide temporary relief. If symptoms persist beyond one week see a doctor.<|endoftext|>",
+      "generation_time": "3.55s"
+    },
+    {
+      "instruction": "How do I monitor my blood sugar levels?",
+      "input": "Patient is elderly (70+), has type 2 diabetes.",
+      "expected": "Check your blood glucose at least once a day, ideally in the morning before breakfast. Use a glucometer as prescribed by your doctor.",
+      "generated": "Check your blood glucose at least once daily, preferably before meals. Use a glucometer as prescribed by your doctor. Record results to discuss with healthcare provider. Adjust diet or medications as needed based on readings. Always consult your physician before making changes.<|endoftext|>",
+      "generation_time": "2.94s"
+    }
+  ]
+}
