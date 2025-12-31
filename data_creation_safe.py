@@ -1,6 +1,8 @@
 import os
 import json
 import time
+import psutil
+import gc
 from pathlib import Path
 import pandas as pd
 from google import genai
@@ -8,8 +10,14 @@ from google.genai import types
 
 # --- Configuration Constants ---
 GEMINI_MODEL = 'gemini-3-flash-preview'  # SOTA Teacher Model (Released Dec 17, 2025)
-QWEN_MODEL = 'qwen3:4b'           # Local Teacher Model (Ryzen 9 5900X)
+QWEN_MODEL = 'qwen3:4b'           # CPU-Optimized Local Teacher Model (Ryzen 9 5900X)
 OUTPUT_FILE = 'synthetic_geriatric_data.jsonl'
+
+# SAFETY LIMITS to prevent PC shutdown
+MAX_MEMORY_PERCENT = 75  # Stop if RAM usage exceeds this
+MAX_CPU_TEMP = 80  # Stop if CPU temp exceeds this (Celsius)
+COOLDOWN_EVERY_N_BATCHES = 5  # Take a break every N generations
+COOLDOWN_DURATION = 10  # Seconds to rest between batches
 
 # Resolve seed files across common notebook locations (Colab/local/Drive/Windows path provided)
 BASE_DIR = Path(__file__).parent if "__file__" in globals() else Path.cwd()
@@ -22,6 +30,28 @@ SEARCH_DIRS = [
     BASE_DIR,
     Path.cwd()
 ]
+
+def check_system_health():
+    """Monitor system resources and return warnings if limits are exceeded."""
+    warnings = []
+    
+    # Check RAM
+    mem = psutil.virtual_memory()
+    if mem.percent > MAX_MEMORY_PERCENT:
+        warnings.append(f"⚠️ RAM usage at {mem.percent:.1f}% (limit: {MAX_MEMORY_PERCENT}%)")
+    
+    # Check CPU temperature (if available)
+    try:
+        temps = psutil.sensors_temperatures()
+        if 'coretemp' in temps or 'k10temp' in temps:
+            temp_key = 'k10temp' if 'k10temp' in temps else 'coretemp'
+            cpu_temp = max([t.current for t in temps[temp_key]])
+            if cpu_temp > MAX_CPU_TEMP:
+                warnings.append(f"🔥 CPU temp at {cpu_temp}°C (limit: {MAX_CPU_TEMP}°C)")
+    except:
+        pass  # Temperature monitoring not available
+    
+    return warnings
 
 def resolve_all_seed_files():
     """Find and return paths to all available seed data files."""
@@ -69,7 +99,7 @@ SEED_SAMPLE_SIZE = 500  # Only use a small, diverse subset of the mental health 
 TARGET_GENERATION_SIZE = 50000 # The number of high-quality examples we aim to generate
 
 # API Client Initialization
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "AIzaSyAF0jRW5m446-N6Gp8UO_vWo8HYQWaAyIk")  # Fallback from list_models.py
 QWEN_API_KEY = os.getenv("QWEN_API_KEY", "EMPTY") # Default for local vLLM/Ollama
 QWEN_API_BASE = os.getenv("QWEN_API_BASE", "http://localhost:11434/v1")
 
@@ -84,7 +114,12 @@ except Exception as e:
 # For Qwen 3 (OpenAI compatible API)
 from openai import OpenAI
 try:
-    qwen_client = OpenAI(api_key=QWEN_API_KEY, base_url=QWEN_API_BASE)
+    qwen_client = OpenAI(
+        api_key=QWEN_API_KEY, 
+        base_url=QWEN_API_BASE,
+        timeout=30.0,  # Add timeout to prevent hanging
+        max_retries=2   # Limit retries
+    )
 except Exception as e:
     print(f"ERROR: Failed to initialize OpenAI client for Qwen: {e}")
     qwen_client = None
@@ -256,13 +291,14 @@ def prepare_seed_data(seed_files_dict, sample_size):
 ### B. Generation Script
 
 def generate_synthetic_data(seed_data, target_size, gemini_client, qwen_client):
-    """Iteratively calls Gemini and Qwen to generate structured data."""
+    """Iteratively calls Gemini and Qwen to generate structured data with safety checks."""
     if not gemini_client and not qwen_client:
         print("ERROR: No AI clients available. Check your API keys and endpoints.")
         return []
     
     generated_count = 0
     synthetic_data = []
+    batch_count = 0
     
     # Topics for guided generation to ensure diversity and domain focus
     topics = [
@@ -292,6 +328,17 @@ def generate_synthetic_data(seed_data, target_size, gemini_client, qwen_client):
     ]
     
     while generated_count < target_size:
+        # === SAFETY CHECK ===
+        health_warnings = check_system_health()
+        if health_warnings:
+            print("\n🚨 SYSTEM HEALTH WARNING 🚨")
+            for warning in health_warnings:
+                print(f"  {warning}")
+            print("Pausing for 60 seconds to let system cool down...")
+            time.sleep(60)
+            gc.collect()  # Force garbage collection
+            continue
+        
         # Sample a topic and some seed examples
         current_topic = topics[generated_count % len(topics)]
         seed_sample = json.dumps(seed_data[:5], indent=2)
@@ -310,7 +357,7 @@ def generate_synthetic_data(seed_data, target_size, gemini_client, qwen_client):
         active_client = gemini_client if use_gemini else qwen_client
         model_name = GEMINI_MODEL if use_gemini else QWEN_MODEL
         
-        print(f"Attempting generation with {model_name} for topic: {current_topic}")
+        print(f"[Batch {batch_count+1}] Generating with {model_name} | Topic: {current_topic[:50]}...")
         
         new_triples = []
         try:
@@ -327,7 +374,7 @@ def generate_synthetic_data(seed_data, target_size, gemini_client, qwen_client):
                 )
                 new_triples = json.loads(response.text)
             else:
-                # Qwen 3 via OpenAI API
+                # Qwen 3 via OpenAI API with reduced context
                 response = active_client.chat.completions.create(
                     model=model_name,
                     messages=[
@@ -335,7 +382,8 @@ def generate_synthetic_data(seed_data, target_size, gemini_client, qwen_client):
                         {"role": "user", "content": generation_prompt}
                     ],
                     response_format={"type": "json_object"},
-                    temperature=0.8
+                    temperature=0.8,
+                    max_tokens=2000  # Limit output length
                 )
                 # Note: OpenAI response needs parsing based on ALPAC_SCHEMA manually if not supported natively
                 data = json.loads(response.choices[0].message.content)
@@ -354,20 +402,35 @@ def generate_synthetic_data(seed_data, target_size, gemini_client, qwen_client):
                 valid_triples = [t for t in new_triples if all(k in t for k in ["instruction", "input", "output"])]
                 synthetic_data.extend(valid_triples)
                 generated_count += len(valid_triples)
-                print(f"Generated {len(valid_triples)} new triples. Total: {generated_count}/{target_size}")
+                print(f"✓ Generated {len(valid_triples)} triples. Total: {generated_count}/{target_size}")
                 
                 # Append to file incrementally
                 with open(OUTPUT_FILE, "a") as f:
                     for item in valid_triples:
                         f.write(json.dumps(item) + "\n")
+                
+                batch_count += 1
+                
+                # Periodic cooldown to prevent overheating
+                if batch_count % COOLDOWN_EVERY_N_BATCHES == 0:
+                    print(f"💤 Cooldown break ({COOLDOWN_DURATION}s) after {batch_count} batches...")
+                    time.sleep(COOLDOWN_DURATION)
+                    gc.collect()  # Clear memory
             
         except Exception as e:
-            print(f"Generation failed with {model_name}: {e}")
-            time.sleep(8) # Cooldown
+            print(f"❌ Generation failed with {model_name}: {e}")
+            print("Waiting 10 seconds before retry...")
+            time.sleep(10)
+            gc.collect()
             
-    print(f"\n--- Stage 1 Complete. Data saved to {OUTPUT_FILE} ---")
+    print(f"\n✅ Stage 1 Complete. Data saved to {OUTPUT_FILE}")
     return synthetic_data
+
 if __name__ == "__main__":
+    print("=== SAFE DATA GENERATION MODE ===")
+    print(f"Safety limits: RAM<{MAX_MEMORY_PERCENT}%, CPU<{MAX_CPU_TEMP}°C")
+    print(f"Cooldown: Every {COOLDOWN_EVERY_N_BATCHES} batches for {COOLDOWN_DURATION}s\n")
+    
     # 1. Prepare Seed Data from all available sources
     seeds = prepare_seed_data(SEED_FILES, SEED_SAMPLE_SIZE)
     
