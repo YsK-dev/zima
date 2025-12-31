@@ -80,16 +80,5 @@ watch -n 5 nvidia-smi
 | ❌ Slow | ✅ **~5,000 samples/hour** |
 | ❌ API quotas | ✅ **No quotas** |
 
-**No more PC shutdowns! No more API limits!** 🎉
+**No more PC shutdowns! No more API limits hurray ** 🎉
 
----
-
-## Support
-
-- **Full Guide**: Read `LIGHTNING_AI_GUIDE.md`
-- **Lightning.ai**: https://lightning.ai/
-- **Free tier**: 4 GPU hours/day
-
----
-
-**Ready? Go to lightning.ai and create your Studio now!** →
