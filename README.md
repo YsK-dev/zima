@@ -1,59 +1,86 @@
----
-base_model: unsloth/qwen2.5-1.5b-instruct-unsloth-bnb-4bit
-library_name: transformers
-model_name: zima_qwen_geriatric
-tags:
-- generated_from_trainer
-- unsloth
-- trl
-- sft
-licence: license
----
+# 🏥 Zima - Geriatric Health Assistant
 
-# Model Card for zima_qwen_geriatric
+A fine-tuned AI model to provide compassionate, actionable health advice for elderly individuals (70+).
 
-This model is a fine-tuned version of [unsloth/qwen2.5-1.5b-instruct-unsloth-bnb-4bit](https://huggingface.co/unsloth/qwen2.5-1.5b-instruct-unsloth-bnb-4bit).
-It has been trained using [TRL](https://github.com/huggingface/trl).
+## 🎯 Project Overview
 
-## Quick start
+**Model**: Qwen 2.5 1.5B fine-tuned with LoRA  
+**Dataset**: 10,743 synthetic samples  
+**Perplexity**: 1.51 (excellent)  
+
+## 🔗 HuggingFace
+
+- **Model**: [YsK-dev/zima-qwen-geriatric-1.5b](https://huggingface.co/YsK-dev/zima-qwen-geriatric-1.5b)
+- **Dataset**: [YsK-dev/geriatric-health-advice](https://huggingface.co/datasets/YsK-dev/geriatric-health-advice)
+
+## 📁 Project Structure
+
+```
+zima/
+├── data_creation/           # Data generation scripts
+│   ├── data_creation_lightning.py  # Main generation script
+│   ├── setup_lightning.sh          # Lightning.ai setup
+│   └── LIGHTNING_AI_GUIDE.md       # Usage guide
+│
+├── training/                # Model training
+│   ├── prepare_data.py      # Data preprocessing
+│   ├── train_unsloth.py     # Unsloth fine-tuning
+│   ├── evaluate_model.py    # Model evaluation
+│   └── setup_training.sh    # Environment setup
+│
+├── generated_data/          # Training data
+│   └── synthetic_geriatric_data (2).jsonl
+│
+├── seed_data/               # Initial seed prompts
+│
+├── trainde_model/Model files (LoRA adapter):
+│   ├── adapter_model.safetensors
+│   ├── adapter_config.json
+│   └── tokenizer files
+│
+├── MODEL_CARD.md            # HuggingFace model docs
+├── DATASET_CARD.md          # HuggingFace dataset docs
+```
+
+## 🚀 Quick Start
+
+### Load from HuggingFace
 
 ```python
-from transformers import pipeline
+from unsloth import FastLanguageModel
 
-question = "If you had a time machine, but could only go to the past or the future once and never return, which would you choose and why?"
-generator = pipeline("text-generation", model="None", device="cuda")
-output = generator([{"role": "user", "content": question}], max_new_tokens=128, return_full_text=False)[0]
-print(output["generated_text"])
+model, tokenizer = FastLanguageModel.from_pretrained(
+    "YsK-dev/zima-qwen-geriatric-1.5b",
+    max_seq_length=512,
+    load_in_4bit=True,
+)
 ```
 
-## Training procedure
+### Replicate Training
 
- 
+```bash
+# 1. Generate data (Lightning.ai)
+cd data_creation
+./setup_lightning.sh
+python data_creation_lightning.py
 
-
-This model was trained with SFT.
-
-### Framework versions
-
-- TRL: 0.24.0
-- Transformers: 4.57.3
-- Pytorch: 2.8.0+cu128
-- Datasets: 4.3.0
-- Tokenizers: 0.22.1
-
-## Citations
-
-
-
-Cite TRL as:
-    
-```bibtex
-@misc{vonwerra2022trl,
-	title        = {{TRL: Transformer Reinforcement Learning}},
-	author       = {Leandro von Werra and Younes Belkada and Lewis Tunstall and Edward Beeching and Tristan Thrush and Nathan Lambert and Shengyi Huang and Kashif Rasul and Quentin Gallou{\'e}dec},
-	year         = 2020,
-	journal      = {GitHub repository},
-	publisher    = {GitHub},
-	howpublished = {\url{https://github.com/huggingface/trl}}
-}
+# 2. Train model (Lightning.ai)
+cd training
+./setup_training.sh
+python prepare_data.py
+python train_unsloth.py
+python evaluate_model.py
 ```
+
+## 📊 Results
+
+| Metric | Value |
+|--------|-------|
+| Training Loss | 0.32 |
+| Validation Loss | 0.40 |
+| Perplexity | 1.51 |
+| Samples | 10,743 |
+
+## 📄 License
+
+Apache 2.0
