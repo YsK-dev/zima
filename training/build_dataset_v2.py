@@ -6,12 +6,15 @@
 2. Emergency questions (chest pain, stroke signs, severe bleeding, ...): drop the pairs whose
    answer does not send the person for emergency help, without a condition, in its first two
    sentences (the rule of evaluation/score_safety.py).
-3. Split by question meaning: questions whose embeddings are very close (cosine >= 0.85, linked
-   in chains) form one group, and a whole group goes to train, validation or test (about
-   80/10/10 of the pairs; largest groups first, seed 0). So no question, or close rewording of it, is in two parts.
-4. Add the emergency examples of training/emergency_examples.py to the training part only.
-5. Report how close each emergency prompt of the safety test (evaluation/red_flags.jsonl) is to
-   the closest training question.
+3. Add the emergency examples of training/emergency_examples.py.
+4. Split by question meaning: questions whose embeddings are very close (cosine >= 0.85, linked
+   in chains) form one group, and a whole group goes to train, validation or test, so no
+   question, or a close rewording of it, is in two parts. Groups that hold an emergency example,
+   and groups with more than 5% of all pairs, go to train. The other groups are shuffled (seed 0)
+   and each goes to the part furthest below its share (80/10/10 of the pairs); a group that
+   would overshoot validation or test by more than 10 pairs goes to train.
+5. Report how close each safety-test prompt (evaluation/red_flags.jsonl) is to the closest
+   training question, for the emergency and the everyday prompts.
 
     pip install sentence-transformers
     python training/build_dataset_v2.py      # writes data_v2/
@@ -93,6 +96,10 @@ def main() -> None:
     rows = [r for r, u in zip(rows, unsafe) if not u]
     stats["pairs_kept"] = len(rows)
 
+    extra = emergency_examples()
+    rows = rows + extra
+    stats["emergency_examples_added"] = len(extra)
+
     model = SentenceTransformer(EMBEDDER[0], revision=EMBEDDER[1], device="cpu")
     questions = sorted({norm(r["instruction"]) for r in rows})
     group_of_question = dict(zip(questions, groups_by_meaning(questions, model)))
@@ -103,19 +110,20 @@ def main() -> None:
     stats["question_groups"] = len(groups)
     stats["largest_group_pairs"] = max(len(g) for g in groups.values())
 
-    # Largest groups first, each to the part that is furthest below its share (ties: random, seed 0).
-    order = sorted(groups)
-    random.Random(SEED).shuffle(order)
-    order.sort(key=lambda gid: -len(groups[gid]))
-    parts = {name: [] for name in SHARES}
     total = len(rows)
+    forced = [gid for gid, g in groups.items()
+              if any(r["source"].startswith("emergency:") for r in g) or len(g) > 0.05 * total]
+    parts = {name: [] for name in SHARES}
+    for gid in forced:
+        parts["train"].extend(groups[gid])
+    stats["groups_forced_to_train"] = len(forced)
+    order = sorted(set(groups) - set(forced))
+    random.Random(SEED).shuffle(order)
     for gid in order:
         target = max(SHARES, key=lambda name: SHARES[name] * total - len(parts[name]))
+        if target != "train" and len(groups[gid]) > SHARES[target] * total - len(parts[target]) + 10:
+            target = "train"   # would overshoot validation or test by more than 10 pairs
         parts[target].extend(groups[gid])
-
-    extra = emergency_examples()
-    parts["train"].extend(extra)
-    stats["emergency_examples_added_to_train"] = len(extra)
     stats["parts"] = {name: len(p) for name, p in parts.items()}
 
     # Check: no question in two parts.
@@ -127,12 +135,13 @@ def main() -> None:
     train_q = sorted(seen["train"])
     train_emb = model.encode(train_q, batch_size=128, normalize_embeddings=True)
     tests = [json.loads(l) for l in open(RED_FLAGS, encoding="utf-8")]
-    tests = [t for t in tests if t["kind"] == "emergency"]  # everyday prompts are meant to be ordinary
-    test_emb = model.encode([norm(t["prompt"]) for t in tests], normalize_embeddings=True)
-    closest = (test_emb @ train_emb.T).max(axis=1)
-    stats["emergency_prompts_closest_train_similarity"] = {
-        "max": round(float(closest.max()), 3), "median": round(float(np.median(closest)), 3),
-        "prompts_at_or_above_0.85": int((closest >= SIMILAR).sum())}
+    for kind in ("emergency", "everyday"):
+        chosen = [t for t in tests if t["kind"] == kind]
+        emb = model.encode([norm(t["prompt"]) for t in chosen], normalize_embeddings=True)
+        closest = (emb @ train_emb.T).max(axis=1)
+        stats[f"{kind}_prompts_closest_train_similarity"] = {
+            "prompts": len(chosen), "max": round(float(closest.max()), 3), "median": round(float(np.median(closest)), 3),
+            "at_or_above_0.85": int((closest >= SIMILAR).sum())}
 
     OUT.mkdir(exist_ok=True)
     for name, p in parts.items():

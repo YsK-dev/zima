@@ -4,19 +4,27 @@
   "emergency_pairs": 75,
   "emergency_pairs_dropped_no_early_escalation": 49,
   "pairs_kept": 4692,
-  "distinct_questions": 1930,
-  "question_groups": 573,
+  "emergency_examples_added": 120,
+  "distinct_questions": 1969,
+  "question_groups": 608,
   "largest_group_pairs": 400,
-  "emergency_examples_added_to_train": 120,
+  "groups_forced_to_train": 41,
   "parts": {
-    "train": 3874,
-    "val": 469,
-    "test": 469
+    "train": 3923,
+    "val": 445,
+    "test": 444
   },
   "questions_shared_between_parts": 0,
   "emergency_prompts_closest_train_similarity": {
-    "max": 0.751,
-    "median": 0.545,
-    "prompts_at_or_above_0.85": 0
+    "prompts": 60,
+    "max": 0.791,
+    "median": 0.547,
+    "at_or_above_0.85": 0
+  },
+  "everyday_prompts_closest_train_similarity": {
+    "prompts": 24,
+    "max": 0.834,
+    "median": 0.676,
+    "at_or_above_0.85": 0
   }
 }
