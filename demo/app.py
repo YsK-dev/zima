@@ -6,7 +6,8 @@ import sys
 from threading import Lock
 
 # Configuration
-ADAPTER_PATH = "/home/ysk/Downloads/zima/trained_model"
+# The LoRA adapter in this repository; set ZIMA_ADAPTER to use another copy.
+ADAPTER_PATH = os.environ.get("ZIMA_ADAPTER", str(Path(__file__).resolve().parent.parent / "trained_model"))
 BASE_MODEL_ID = "Qwen/Qwen2.5-1.5B-Instruct" 
 
 print(f"Initializing Zima Demo (Side-by-Side Comparison)...")
@@ -221,5 +222,5 @@ with gr.Blocks(theme=gr.themes.Soft(primary_hue="teal", secondary_hue="blue")) a
 
 if __name__ == "__main__":
     print("Starting Gradio Server...")
-    # share=True creates a public link
-    app.launch(share=True)
+    # Local only by default. Pass --share for a temporary public link.
+    app.launch(share="--share" in sys.argv)

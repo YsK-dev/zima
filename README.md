@@ -1,50 +1,64 @@
-# 🏥 Zima - Geriatric Health Assistant
+# Zima: everyday health advice for people over 70
 
-A fine-tuned AI model to provide compassionate, actionable health advice for elderly individuals (70+).
+A small language model that gives short, practical health advice to older people, in English.
+It is Qwen2.5-1.5B-Instruct fine-tuned with LoRA on a synthetic dataset made for this project.
 
-## 🎯 Project Overview
+- **Model:** [YsK-dev/zima-qwen-geriatric-1.5b](https://huggingface.co/YsK-dev/zima-qwen-geriatric-1.5b)
+- **Dataset:** [YsK-dev/geriatric-health-advice](https://huggingface.co/datasets/YsK-dev/geriatric-health-advice)
 
-**Model**: Qwen 2.5 1.5B fine-tuned with LoRA  
-**Dataset**: 10,743 synthetic samples  
-**Perplexity**: 1.51 (excellent)  
+> **Not medical advice.** Zima is a learning project. Its training data was written by another
+> language model and was not checked by doctors or nurses. Do not use it to decide on treatment.
+> In an emergency, call your local emergency number.
 
-## 🔗 HuggingFace
+## How it was built
 
-- **Model**: [YsK-dev/zima-qwen-geriatric-1.5b](https://huggingface.co/YsK-dev/zima-qwen-geriatric-1.5b)
-- **Dataset**: [YsK-dev/geriatric-health-advice](https://huggingface.co/datasets/YsK-dev/geriatric-health-advice)
+1. **Seed examples.** Question–answer examples in `seed_data/`.
+2. **Synthetic data.** `data_creation/data_creation_lightning.py` asked Qwen2.5-14B (through
+   Ollama, on a cloud GPU) to write many more question–answer pairs in the style of the seeds.
+   Result: 10,813 pairs in `generated_data/`. Many are copies: of the 10,778 pairs used, 4,741
+   are different from each other, with 1,957 different questions.
+3. **Preparation.** `training/prepare_data.py` drops answers shorter than 10 characters
+   (10,778 pairs left), formats them as instruction–response prompts and splits them at random:
+   9,700 for training, 1,078 held out.
+4. **Fine-tuning.** `training/train_unsloth.py`: LoRA (rank 16, alpha 32) on
+   Qwen2.5-1.5B-Instruct with Unsloth, 3 epochs, learning rate 2e-4, batch size 8 with 4
+   accumulation steps (32 pairs per update), up to 512 tokens per pair.
+   The resulting adapter is in `trained_model/`.
 
-## 📁 Project Structure
+## Results
 
+| Measure | Value |
+|---|---|
+| Perplexity on the 1,078 held-out pairs | 1.51 |
+| Held-out pairs that also appear in the training pairs | 951 of 1,078 (88%) |
+| Example answers saved for reading | 50 |
+
+The perplexity and the examples are in `trained_model/evaluation_results.json`, written by
+`training/evaluate_model.py`. The overlap comes from `training/check_overlap.py`, which rebuilds
+the same split; two pairs count as the same when they match apart from capital letters and
+punctuation.
+
+What this means: because most held-out pairs were also seen in training, the low perplexity
+mostly shows that the model learned the dataset, not that it answers new questions well. It also
+says nothing about whether the advice is correct or safe.
+
+**Next step:** remove the copies, split by question so that no question is in both parts,
+train again and measure on the clean held-out part, next to the base model.
+
+## Try it
+
+The demo shows the base model and Zima side by side for the same question, so you can compare
+them.
+
+```bash
+pip install -r demo/requirements.txt
+python demo/app.py            # local only; add --share for a temporary public link
 ```
-zima/
-├── data_creation/           # Data generation scripts
-│   ├── data_creation_lightning.py  # Main generation script
-│   ├── setup_lightning.sh          # Lightning.ai setup
-│   └── LIGHTNING_AI_GUIDE.md       # Usage guide
-│
-├── training/                # Model training
-│   ├── prepare_data.py      # Data preprocessing
-│   ├── train_unsloth.py     # Unsloth fine-tuning
-│   ├── evaluate_model.py    # Model evaluation
-│   └── setup_training.sh    # Environment setup
-│
-├── generated_data/          # Training data
-│   └── synthetic_geriatric_data (2).jsonl
-│
-├── seed_data/               # Initial seed prompts
-│
-├── trainde_model/Model files (LoRA adapter):
-│   ├── adapter_model.safetensors
-│   ├── adapter_config.json
-│   └── tokenizer files
-│
-├── MODEL_CARD.md            # HuggingFace model docs
-├── DATASET_CARD.md          # HuggingFace dataset docs
-```
 
-## 🚀 Quick Start
+On a machine with an NVIDIA GPU it uses Unsloth with 4-bit weights; otherwise it runs on the CPU
+with Transformers and PEFT (slower).
 
-### Load from HuggingFace
+Or load the model from Hugging Face:
 
 ```python
 from unsloth import FastLanguageModel
@@ -56,31 +70,25 @@ model, tokenizer = FastLanguageModel.from_pretrained(
 )
 ```
 
-### Replicate Training
+## Repository layout
 
-```bash
-# 1. Generate data (Lightning.ai)
-cd data_creation
-./setup_lightning.sh
-python data_creation_lightning.py
-
-# 2. Train model (Lightning.ai)
-cd training
-./setup_training.sh
-python prepare_data.py
-python train_unsloth.py
-python evaluate_model.py
+```
+seed_data/        hand-collected seed examples
+data_creation/    synthetic data generation (Qwen2.5-14B through Ollama)
+generated_data/   the generated dataset (JSONL)
+training/         data preparation, fine-tuning and evaluation scripts
+trained_model/    the LoRA adapter, tokenizer and evaluation results
+demo/             Gradio app: base model and Zima side by side
 ```
 
-## 📊 Results
+## Limits
 
-| Metric | Value |
-|--------|-------|
-| Training Loss | 0.32 |
-| Validation Loss | 0.40 |
-| Perplexity | 1.51 |
-| Samples | 10,743 |
+- English only.
+- The data was written by a language model, so it can repeat that model's mistakes.
+- No test yet of whether the model sends real emergencies (chest pain, stroke signs, a fall with a
+  head injury) to a doctor or emergency services.
 
-## 📄 License
+## Licence
 
-Apache 2.0
+Apache 2.0, as stated on the Hugging Face model and dataset pages. The base model,
+Qwen2.5-1.5B-Instruct, is also Apache 2.0.
