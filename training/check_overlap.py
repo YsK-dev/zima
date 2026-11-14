@@ -49,6 +49,8 @@ def main() -> None:
     print(f"train: {len(train)}, held out: {len(held_out)}")
     print(f"held-out pairs also in training: {same_pair} ({same_pair / len(held_out):.1%})")
     print(f"held-out questions also in training: {same_question} ({same_question / len(held_out):.1%})")
+    first = held_out[:100]  # evaluate_model.py computes perplexity on these
+    print(f"of the first 100 held-out pairs (used for perplexity), also in training: {sum(key(r) in train_pairs for r in first)}")
 
 
 if __name__ == "__main__":

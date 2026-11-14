@@ -20,17 +20,19 @@ It is Qwen2.5-1.5B-Instruct fine-tuned with LoRA on a synthetic dataset made for
 3. **Preparation.** `training/prepare_data.py` drops answers shorter than 10 characters
    (10,778 pairs left), formats them as instruction–response prompts and splits them at random:
    9,700 for training, 1,078 held out.
-4. **Fine-tuning.** `training/train_unsloth.py`: LoRA (rank 16, alpha 32) on
-   Qwen2.5-1.5B-Instruct with Unsloth, 3 epochs, learning rate 2e-4, batch size 8 with 4
-   accumulation steps (32 pairs per update), up to 512 tokens per pair.
-   The resulting adapter is in `trained_model/`.
+4. **Fine-tuning.** `training/train_unsloth.py`: QLoRA (LoRA rank 16, alpha 32, on a 4-bit
+   copy of Qwen2.5-1.5B-Instruct) with Unsloth, 3 epochs, learning rate 2e-4, batch size 8 with 4
+   accumulation steps (32 pairs per update), up to 512 tokens per pair. The checkpoint with
+   the lowest loss on the held-out pairs was kept. The resulting adapter is in `trained_model/`.
 
 ## Results
 
 | Measure | Value |
 |---|---|
-| Perplexity on the 1,078 held-out pairs | 1.51 |
-| Held-out pairs that also appear in the training pairs | 951 of 1,078 (88%) |
+| Perplexity on the first 100 held-out pairs | 1.51 |
+| Of those 100, pairs that also appear in the training pairs | 90 |
+| All held-out pairs that also appear in the training pairs | 951 of 1,078 (88%) |
+| Held-out questions that also appear in the training pairs | 1,035 of 1,078 (96%) |
 | Example answers saved for reading | 50 |
 
 The perplexity and the examples are in `trained_model/evaluation_results.json`, written by
@@ -38,12 +40,15 @@ The perplexity and the examples are in `trained_model/evaluation_results.json`, 
 the same split; two pairs count as the same when they match apart from capital letters and
 punctuation.
 
-What this means: because most held-out pairs were also seen in training, the low perplexity
-mostly shows that the model learned the dataset, not that it answers new questions well. It also
-says nothing about whether the advice is correct or safe.
+What this means: most held-out pairs were also seen in training, so the low perplexity mostly
+shows that the model learned the dataset, not that it answers new questions well. Two more things
+make it lower: it is computed over the whole prompt, including the fixed template text, and the
+same held-out pairs were used to pick the checkpoint. It also says nothing about whether the
+advice is correct or safe.
 
-**Next step:** remove the copies, split by question so that no question is in both parts,
-train again and measure on the clean held-out part, next to the base model.
+**Next step:** remove the copies; split by question into training, validation (to pick the
+checkpoint) and test parts, so that no question is in two parts; train again; and measure on the
+test part, on the answer text only, next to the base model.
 
 ## Try it
 
@@ -56,7 +61,9 @@ python demo/app.py            # local only; add --share for a temporary public l
 ```
 
 On a machine with an NVIDIA GPU it uses Unsloth with 4-bit weights; otherwise it runs on the CPU
-with Transformers and PEFT (slower).
+with Transformers and PEFT (slower). `demo/requirements.txt` includes the GPU packages (Unsloth,
+bitsandbytes); on a machine without an NVIDIA GPU, install `torch transformers peft gradio`
+instead.
 
 Or load the model from Hugging Face:
 
@@ -73,7 +80,7 @@ model, tokenizer = FastLanguageModel.from_pretrained(
 ## Repository layout
 
 ```
-seed_data/        hand-collected seed examples
+seed_data/        seed examples
 data_creation/    synthetic data generation (Qwen2.5-14B through Ollama)
 generated_data/   the generated dataset (JSONL)
 training/         data preparation, fine-tuning and evaluation scripts
