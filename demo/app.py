@@ -166,6 +166,8 @@ with gr.Blocks(theme=gr.themes.Soft(primary_hue="teal", secondary_hue="blue")) a
     gr.Markdown(
         """
         # 🏥 Zima Geriatric Health Assistant - Comparison Demo
+
+        **Not medical advice.** A learning project; its answers can be wrong. In an emergency, call your local emergency number.
         
         Compare the **Base Qwen 2.5 Model** versus the **Fine-Tuned Zima Model**.
         """
@@ -187,7 +189,7 @@ with gr.Blocks(theme=gr.themes.Soft(primary_hue="teal", secondary_hue="blue")) a
             with gr.Accordion("System Info", open=True):
                  mode_label = "GPU (Accelerated)" if USE_GPU else "CPU (Compatibility Mode)"
                  gr.Markdown(f"**Running Mode:** {mode_label}")
-                 gr.Markdown(f"**Adpaters:** Active")
+                 gr.Markdown(f"**Adapters:** Active")
             
             submit_btn = gr.Button("Compare Models", variant="primary", size="lg")
             

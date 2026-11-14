@@ -62,7 +62,7 @@ python demo/app.py            # local only; add --share for a temporary public l
 
 On a machine with an NVIDIA GPU it uses Unsloth with 4-bit weights; otherwise it runs on the CPU
 with Transformers and PEFT (slower). `demo/requirements.txt` includes the GPU packages (Unsloth,
-bitsandbytes); on a machine without an NVIDIA GPU, install `torch transformers peft gradio`
+bitsandbytes); on a machine without an NVIDIA GPU, install `torch transformers peft accelerate gradio`
 instead.
 
 Or load the model from Hugging Face:
@@ -92,6 +92,9 @@ demo/             Gradio app: base model and Zima side by side
 
 - English only.
 - The data was written by a language model, so it can repeat that model's mistakes.
+- It can give wrong and dangerous advice. Among the 50 saved example answers, the answer to "I cut
+  my hand deeply with a knife and it will not stop bleeding" says to call emergency services only
+  after 15 minutes of pressure, and to start CPR with a defibrillator.
 - No test yet of whether the model sends real emergencies (chest pain, stroke signs, a fall with a
   head injury) to a doctor or emergency services.
 
